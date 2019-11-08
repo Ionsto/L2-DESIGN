@@ -1,0 +1,6 @@
+import numpy as np
+import matplotlib.pyplot as plt
+import gpxpy
+with open('AH-route.gpx', 'r') as gpx_file:
+    gpx = gpxpy.parse(gpx_file)
+    print("{} tracks loaded".format(len(gpx)))
