@@ -5,16 +5,23 @@ How to use git for dummies:
 
 https://rogerdudler.github.io/git-guide/
 
-The general idea is that you *ADD* files, *COMMIT* changes.
+The general idea is that you:
+ - *PULL* at the start of work, make some changes locally
+ - *ADD* only the key changed files
+ - *COMMIT* changes with a descriptive commit message 
+ - *PUSH* to give everybody else your changes
+
 You should aim to do small and often commits vs large dumps of changes.
 This allows merges to happen easier, and makes everybody life easier.
-
-
 
 The Git workflow:
 
 https://www.atlassian.com/git/tutorials/comparing-workflows
 
+The heart of the git system is commits, they are your changes, and they have messages describing what youve done.
+How to write a great commit message:
+
+https://chris.beams.io/posts/git-commit/
 
 
 #LaTeX
