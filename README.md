@@ -1,6 +1,7 @@
 # L2-DESIGN
  Level 2 design coursework, electric skateboard
-
+ 
+## GIT
 How to use git for dummies:
 
 https://rogerdudler.github.io/git-guide/
@@ -24,7 +25,7 @@ How to write a great commit message:
 https://chris.beams.io/posts/git-commit/
 
 
-#LaTeX
+## LaTeX
 
 Compiled markup language, the compiler can be easily installed via TexMaker.
 
