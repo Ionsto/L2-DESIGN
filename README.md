@@ -5,7 +5,12 @@ How to use git for dummies:
 
 https://rogerdudler.github.io/git-guide/
 
-The general idea is that you *PULL* at the start of work, make some changes locally, *ADD* only the key changed files, *COMMIT* changes with a descriptive commit message, then finally *PUSH* to give everybody else your changes.
+The general idea is that you:
+ - *PULL* at the start of work, make some changes locally
+ - *ADD* only the key changed files
+ - *COMMIT* changes with a descriptive commit message 
+ - *PUSH* to give everybody else your changes
+
 You should aim to do small and often commits vs large dumps of changes.
 This allows merges to happen easier, and makes everybody life easier.
 
