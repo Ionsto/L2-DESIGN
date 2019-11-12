@@ -9,12 +9,14 @@ The general idea is that you *ADD* files, *COMMIT* changes.
 You should aim to do small and often commits vs large dumps of changes.
 This allows merges to happen easier, and makes everybody life easier.
 
-
-
 The Git workflow:
 
 https://www.atlassian.com/git/tutorials/comparing-workflows
 
+The heart of the git system is commits, they are your changes, and they have messages describing what youve done.
+How to write a great commit message:
+
+https://chris.beams.io/posts/git-commit/
 
 
 #LaTeX
