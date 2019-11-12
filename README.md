@@ -2,6 +2,7 @@
  Level 2 design coursework, electric skateboard
 
 #LaTeX
+
 Compiled markup language, the compiler can be easily installed via TexMaker.
 
 Resources for latex:
