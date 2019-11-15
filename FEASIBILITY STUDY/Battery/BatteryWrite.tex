@@ -1,5 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
 \begin{document}
 \section{Overview}
 The largest and bulkiest device on any electrical vehicle is the battery.
@@ -8,6 +10,39 @@ Dense energy storage is a difficult task, and batteries are a must for almost al
 The larger the capacity of a battery network, the larger, heavier, and more expensive the battery network becomes.
 The use case of the system needs to be considered for chosing a capacity.
 Capacitance is normally measured in Amp-Hours, or how many hours a battery can supply the rated current at the nominal voltage of the battery.
+
+When specifing capacity for an electric vehicle, two factors are going to be needed:
+\begin{itemize}
+    \item Range
+    \item Efficency
+\end{itemize}
+The nominal range will be determined by the expected average daily usage, and the specified charge frequency. 
+The value given for charge freqency will be once a week.
+The daily usage will be a round trip from Josephine butler to the engineering department on the science site each way this is ~1.3km, this is shown in Fig. \ref{fig:route}.
+\begin{figure}[H]
+    \centering
+    \scalebox{0.5}{\includegraphics{./RouteAnalysis/Route.png}}
+    \caption{Nominal daily route}
+    \label{fig:route}
+\end{figure}
+Due to Durhams goegraphical features, and the relativly small distances involved, the range needs to account for the elevation changes over the trip.
+The exact elevation change can be seen in \ref{fig:route_el}, with the gradients of this data in \ref{fig:route_grad}.
+This data is taken from GPS data from public databases via https://www.gpsvisualizer.com/elevation.
+\begin{figure}[H]
+    \centering
+    \scalebox{0.5}{\includegraphics{./RouteAnalysis/elevation.png}}
+    \caption{Gradient of route}
+    \label{fig:route_el}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \scalebox{0.5}{\includegraphics{./RouteAnalysis/grad.png}}
+    \caption{Elevation of route}
+    \label{fig:route_grad}
+\end{figure}
+There is a total of 41 meters uphill, and 16 meters downhill when going towards butler.
+The effect of the height change on the capacity will be non negligable.
+Roughly 33kJ more energy will be needed with a perfect system.
 \section{Charging}
 Battery charging is difficult, specific charging circuits are needed for most modern high density batteries.
 When trying to charge lots of batteries quickly a large amount of heat is generated, which needs to be considered in the design stage.
