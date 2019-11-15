@@ -8,16 +8,16 @@ The largest and bulkiest device on any electrical vehicle is the battery.
 Dense energy storage is a difficult task, and batteries are a must for almost all devices.
 \section{Capacity}
 The larger the capacity of a battery network, the larger, heavier, and more expensive the battery network becomes.
-The use case of the system needs to be considered for chosing a capacity.
+The use case of the system needs to be considered for choosing a capacity.
 Capacitance is normally measured in Amp-Hours, or how many hours a battery can supply the rated current at the nominal voltage of the battery.
 
-When specifing capacity for an electric vehicle, two factors are going to be needed:
+When specifying capacity for an electric vehicle, two factors are going to be needed:
 \begin{itemize}
     \item Range
-    \item Efficency
+    \item Efficiency
 \end{itemize}
 The nominal range will be determined by the expected average daily usage, and the specified charge frequency. 
-The value given for charge freqency will be once a week.
+The value given for charge frequency will be once a week.
 The daily usage will be a round trip from Josephine butler to the engineering department on the science site each way this is ~1.3km, this is shown in Fig. \ref{fig:route}.
 \begin{figure}[H]
     \centering
@@ -25,15 +25,17 @@ The daily usage will be a round trip from Josephine butler to the engineering de
     \caption{Nominal daily route}
     \label{fig:route}
 \end{figure}
-Due to Durhams goegraphical features, and the relativly small distances involved, the range needs to account for the elevation changes over the trip.
+Due to Durhams geographical features and the relatively small distances involved, the range needs to account for the elevation changes over the trip.
 The exact elevation change can be seen in \ref{fig:route_el}, with the gradients of this data in \ref{fig:route_grad}.
-This data is taken from GPS data from public databases via https://www.gpsvisualizer.com/elevation.
+This data is taken from GPS public databases via https://www.gpsvisualizer.com/elevation.
+The routes were made using google maps - exported to GPS route format.
 \begin{figure}[H]
     \centering
     \scalebox{0.5}{\includegraphics{./RouteAnalysis/elevation.png}}
     \caption{Gradient of route}
     \label{fig:route_el}
 \end{figure}
+Fig. \ref{fig:route_el} shows the elevation through the route, with south road easily identifiable. 
 \begin{figure}[H]
     \centering
     \scalebox{0.5}{\includegraphics{./RouteAnalysis/grad.png}}
@@ -41,7 +43,7 @@ This data is taken from GPS data from public databases via https://www.gpsvisual
     \label{fig:route_grad}
 \end{figure}
 There is a total of 41 meters uphill, and 16 meters downhill when going towards butler.
-The effect of the height change on the capacity will be non negligable.
+The effect of the height change on the capacity will be non negligible.
 Roughly 33kJ more energy will be needed with a perfect system.
 
 10 watt hours per mile - electric bike
