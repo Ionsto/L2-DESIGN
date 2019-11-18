@@ -2,6 +2,9 @@
  Level 2 design coursework, electric skateboard
 
 
+PLEASE USE THE FOLDER STRUCTURE PROPERLY TO KEEP THINGS EASY TO FIND
+
+
 USE THIS https://www.overleaf.com/edu/durham#overview get a free account \#blessed
  
 ## GIT
