@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import filters 
-#Convert google maps to GPX via http://www.gpsies.com/convert.do
+#Convert google maps to GPX via https://www.gpsvisualizer.com/convert_input
 import gpxpy
 with open('AH-route.gpx', 'r',encoding='utf-8') as gpx_file:
     gpx_string = str(gpx_file.read())
@@ -14,6 +14,9 @@ for i,p in enumerate(gpx.get_points_data()):
 #pos_data = distance_data[:]
 #pos_data[1:] = pos_data[1:] - pos_data[:-1]
 #pos_data[0] = 0
+delta = height_data[1:] - height_data[:-1] 
+print("Uphill",np.sum(delta[delta>0]))
+print("Downhill",np.sum(delta[delta<0]))
 grad = np.gradient(height_data,distance_data)
 plt.figure()
 plt.plot(distance_data,height_data)
