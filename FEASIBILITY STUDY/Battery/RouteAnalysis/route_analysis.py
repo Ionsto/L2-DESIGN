@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.ndimage import filters 
-#Convert google maps to GPX via https://www.gpsvisualizer.com/convert_input
+#Convert google maps to GPX via https://www.gpsvisualizer.com/elevation
 import gpxpy
 with open('AH-route.gpx', 'r',encoding='utf-8') as gpx_file:
     gpx_string = str(gpx_file.read())
