@@ -18,7 +18,7 @@ When specifying capacity for an electric vehicle, two factors are going to be ne
 \end{itemize}
 The nominal range will be determined by the expected average daily usage, and the specified charge frequency. 
 The value given for charge frequency will be once a week.
-The daily usage will be a round trip from Josephine butler to the engineering department on the science site each way this is ~1.3km, this is shown in Fig. \ref{fig:route}.
+The daily usage will be a round trip from Josephine butler to the engineering department on the science site each way this is ~1.5km, this is shown in Fig. \ref{fig:route}.
 \begin{figure}[H]
     \centering
     \scalebox{0.5}{\includegraphics{./RouteAnalysis/Route.png}}
@@ -43,8 +43,13 @@ Fig. \ref{fig:route_el} shows the elevation through the route, with south road e
     \label{fig:route_grad}
 \end{figure}
 There is a total of 50 meters uphill, and 25 meters downhill when going towards butler.
-The effect of the height change on the capacity will be non negligible.
-Roughly 33kJ more energy will be needed with a perfect system.
+The effect of the height change on the required battery capacity will be non negligible.
+If we model the energy requirement as a simple vehicle hoist, the energy will be $mg\Delta h$.
+The total vertical distance is 75m.
+Roughly 90kJ more energy will be needed with a perfectly efficient system.
+Since a joule is one watt second, 60kJ is 25 watt hours.
+
+
 
 Rough power estimates: 
 10 watt hours per mile - electric bike
