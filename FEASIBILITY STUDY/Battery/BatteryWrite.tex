@@ -59,6 +59,19 @@ Rough power estimates:
 Battery charging is difficult, specific charging circuits are needed for most modern high density batteries.
 When trying to charge lots of batteries quickly a large amount of heat is generated, which needs to be considered in the design stage.
 Large modern batteries can also be very dangerous - and this is amplified when charging, so care needs to be taken that the design isn't a health hazard.
+\subsection{Lifespan}
+The lifespan of a battery is determined by the depth of discharge, and the family of battery used.
+Lithium ion batteries have a cycle life of about 300 at a depth of discharge of 100\%, and a cycle life of about 800 cycles at 50\% DoD.
+Lithium polymer batteries have a similar lifespan at 100\% DoD, but can increase up to 2000 charges at 50\% DoD.
+
+For this reason we are using LiPo batteiers as they offer the best battery life-span in terms of cycle count.
+\subsection{Rate of charge}
+The rate of charging is a nonlinear funciton with the charge of the battery, therefore it doesn't to quote charge time from 0\%-100\%.
+It makes sense to specify a rate of recharge from a specific depth of discharge.
+The spesific depth of discharge will be determined by the lifespan of the battery, and we can consider a "charge cycle" charging from DoD\% to 95\%.
+
+%https://www.dnkpower.com/lithium-polymer-battery-guide/
+%https://batteryuniversity.com/learn/article/how_to_prolong_lithium_based_batteries
 \section{Regenerative breaking}
 Regenerative breaking is the process of turning unwanted mechanical energy (movement) into electrical energy that can charge the battery. 
 This makes stop start traffic much more efficient - and large amounts of energy can be re-claimed by going downhill.
