@@ -13,7 +13,8 @@
 		\end{itemize}
 	\subsection{Throttle Control}
 		The user needs to be able to control the speed of the board intuitively and quickly, to ensure safe riding.
-		There are already pre-existing electric skateboards that use a wireless controller with a roller as a throttle control. 
+		A potential solution to this is a dual pressure pad system, where leaning forward increases forward throttle, and leaning backwards increases braking/reverse.
+		There are already pre-existing market leader (boosted use a wireless controller with a roller as a throttle control. 
 		This allows for both accelerating, breaking, and reverse, with step wise control for fine adjustment.
 		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
 		Might not be prudent to have direct throttle control of the system, perhaps a fly by wire interface?
@@ -28,8 +29,13 @@
 		\end{itemize}
 	\subsection{Charging}
 		Lithium Polymer batteries have a very high energy density, which although desirable, leads to a range of safety concerns, firstly how to charge them without causing a fire.
+		General guidelines suggest charging at no faster than 1C for optimal battery lifetime, meaning a 1300maH battery is charged at 1.3A.
+		The number of cycles must be counted, as well as the current battery temperature to ensure that the battery is in a healthy state whenever in use.
+		This includes preventing charging when the battery has reached the end of its operational lifetime.
+		If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
 	\subsection{Discharging}
-		text goes here
+		Lithium Polymer batteries can be discharged at a much higher rate than their charging limitations, with typical values for constant discharge in the 40-50C range, with a bust rating (no longer than 10 seconds) in the 90-120C range.
+		The battery management system should therefore monitor the current draw from the battery, ensuring that the circuit is not operating outside these values.
 \section{Motor Control}
 	\subsection{Overview}
 		\begin{itemize}
@@ -40,7 +46,11 @@
 			\item complexity
 		\end{itemize}
 	\subsection{Motor control}
-		text goes here
+		Since a DC Brushless motor is being used, a more complex control method is required than a brushed DC motor.
+		Operating on a 3-phase AC supply, speed is varied by adjusting the frequency of the AC phases.
+		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and are widely available in a range of specifications due to their use in the remote control model industry.
+		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller.
+		This circuit could be designed and produced by hand, however due to the complexity, and the competitive pricing of the currently available products, it may prove a more effective choice to purchase an existing ESC.
 	\subsection{Feedback}
 		text goes here
 \end{document}
