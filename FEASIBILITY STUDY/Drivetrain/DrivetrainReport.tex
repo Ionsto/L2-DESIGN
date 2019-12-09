@@ -1,28 +1,45 @@
 \documentclass{article}
 \usepackage{amsmath}
-\usepackage{graphicx}
-\usepackage{float}
+\usepackage{verbatim} 
 \begin{document}
-\section{Introduction}
-With any motor system there has to be a trade off between the speed of rotation and the torque output of the drive system In the case of this system there need to be a large maximum speed when on flat terrain and the required torque to overcome restive forces due to gravity, air resistance, friction and rolling resistance.
+\section{Motor Choice}
+Maybe an intro? 
 
-The simplest solution would be to directly attach motors to the wheel but with typical motor speed of ??RPM this would give a speed of the skateboard of ??? there is clearly a disparity here that needs to be fixed using some sort of drivetrain
-
-\section{Types}
-There are numerous types of drive train possible but this repot will mainly focus on:
+\subsection{Required Parameters}
+The main requirements of the motor are:
 \begin{itemize}
-	\item Belt
-	\item Gearing
-	\item Hub motor
-	\item Chain
+	\item Size- the motor has to fit under the board
+	\item Torque- There should be enough torque to accelerate uphill - 10Nm at the wheel [figure]
+	\item Speed- The Kv motor parameter should be 
+	\item Power
 \end{itemize}
-\subsection{Belt}
-Belt driven systems have a large amount of elasticity so they provide a low noise and vibration power transmission that is beneficial in this application as constant vibration from transmission would provide an unpleasant user experience.
-Belt systems are also low maintenance and as they require no oiling and typically have very long life spans.
-\subsection{Gearing}
-Having the output of the motor go directly into a gear arrangement or a gear box would allow for a vast array of gear ratios as well as the potential to change gears in the case of certain gear boxes however for this application this is likely to be unnecessary due to the typically large range of output speeds of DC motors. Another potential advantage of using gearing is that it allows for simple arrangements with on motor driving 2 wheels
-\subsection{Chain}
-Using a chain to drive the board is the most efficient way to transmit power out of the options covered. 
-However it is high maintenance as due to the chain being metallic there is need for lubrication to prevent excess wear and oxidation. 
-\end{document}
 
+\subsection{AC Brush-less Motor}
+The AC induction motor is the most common type of motor in large industrial applications as it is very efficient durable and reliable. However, using a DC battery source would require a variable frequency inverter to produce an AC output to the motor and be able to control the speed, and particularly with single phase induction motors the staring toque is very low which is unsuitable for the application of a skateboard. 
+
+\subsection{DC Brushed Motor}
+Using a commutator allows a motor to be run from a DC supply but by using carbon brushes adds a large amount of friction to the operation and varying the speed of this type of motor is harder especially if two motors were to be used as ensuring they are running at the same speed is challenging
+
+\subsection{DC Brush-less Motor}
+With electronic speed control a motor can be run from a DC supply with relatively simple control of speed. Also as this eliminates the need for a commutator there is less friction so greater efficiency, longer lifespan and reduced wight for the same output power. This motor family also gives a large staring torque so the board will be able to accelerate quickly from the start. For these reasons it was decided a DC brush-less motor would be used.
+
+
+\section{Power-train}
+
+\subsection{Belt}
+Due to elasticity of rubber belts this option provides low noise and vibration and allows for efficient power transmission. Furthermore, they are very low maintenance and have a long lifespan. 
+
+
+\subsection{Gearing}
+Having the output of the motor go directly into a gear arrangement or a gear box would allow for a vast array of gear ratios however this would require strong gears to provide the required torque and the large range of output speeds of DC motors means a large gear ratio may be unnecessary.
+\marginpar{more specific torque info}
+
+
+\subsection{Chain}
+Using a chain drive is the most efficient way to transmit power out of the options covered with an typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However it is high maintenance due to the need of lubrication to prevent wear and oxidation. 
+
+
+\subsection{Hub Motor}
+Hub motors are entirely contained in the wheels of the skateboard and they offer many advantages- mainly they are extremely quiet, low maintenance and have a sleek appearance. [Details]
+However as they have no gear ratios and are limited in terms of space of the wheels they provide less torque than a traditional drive. [cooling?, wheel customization, ride- thin polyurethane]
+\end{document}
