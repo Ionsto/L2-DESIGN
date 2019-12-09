@@ -2,58 +2,55 @@
 \usepackage{amsmath}
 \begin{document}
 \section{Overview}
-	Any complex electronic system will almost always require a control unit to operate it. 
-	This can take many forms, from off-the-shelf solutions to bespoke circuits.
+	Any complex electronic system will almost always require a control unit to operate it.
 	There are three aspects of control that must be designed for; the user interface to control the skateboard, battery management, and motor/drive train control.
 	For this application, and the one-off nature of the product, it would be most effective to use a micro-controller system on a chip for control, rather than a bespoke hardware solution.
 	This is due to the ease of altering functionality, and the high volume of support documentation for these units.
+	Due to time and budget constraints, it would also be more effective to search for existing circuit modules than trying to design and build bespoke layouts.
 \section{User Interface}
-	\subsection{Overview}
-		\begin{itemize}
-			\item Throttle (Both variable and on/off)
-			\item Status meters to the rider (battery percentage, throttle level etc)
-		\end{itemize}
+	%\subsection{Overview}
+		%\begin{itemize}
+			%\item Throttle (Both variable and on/off)
+			%\item Status meters to the rider (battery percentage, throttle level etc)
+		%\end{itemize}
 	\subsection{Throttle Control}
 		The user needs to be able to control the speed of the board intuitively and quickly, to ensure safe riding.
-		A potential solution to this is a dual pressure pad system, where leaning forward increases forward throttle, and leaning backwards increases braking/reverse.
-		There are already pre-existing market leader (boosted use a wireless controller with a roller as a throttle control. 
-		This allows for both accelerating, breaking, and reverse, with step wise control for fine adjustment.
+		The market leader utilises wireless controller (as shown Fig XXX)allowing for braking, accelerating and reverse, with fine stepwise control for each by a roller potentiometer.
 		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
+		A potential solution to this is a dual pressure pad system, pictured XXX.
 	\subsection{Status Meters}
 		The user needs to be able to understand what the remaining range of the board is, so that they will not undertake a journey where they will run out of charge mid-journey.
-		This could be achieved with a 7-segment numerical display, where the remaining capacity as a percentage is shown.
-		For a throttle meter, the current market leader uses a series of LEDs, where the higher the number of LEDs illuminated, the higher the throttle.
-		This could be an effective and easy to implement method, however an alternative is a second numerical display, allowing throttle to also be shown as a percentage, giving the user greater resolution of control.
+	The current market leader uses an array of LEDs on its controller for status information.
+		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider.
 \section{Battery Management}
-	\subsection{Overview}
-		\begin{itemize}
-			\item Safe charging and discharging 
-			\item Monitoring battery health including charge cycle number
-		\end{itemize}
+	%\subsection{Overview}
+		%\begin{itemize}
+			%\item Safe charging and discharging 
+			%\item Monitoring battery health including charge cycle number
+		%\end{itemize}
 	\subsection{Charging/Discharging}
 	***Care must be taken to ensure that in normal operation the battery is not charged or discharged outside of safe conditions.
-	This includes tracking the number of cycles the battery has goen through, as well as temperature, with a view to stop the rider from using the system if the battery is no longer in a safe state.***
+	This includes tracking the number of cycles the battery has gone through, as well as temperature, with a view to stop the rider from using the system if the battery is no longer in a safe state.***
 	
-		General guidelines suggest charging at no faster than 1C for optimal battery lifetime, meaning a 1300maH battery is charged at 1.3A for a duration of 1 hour.
-		Discharge ratings vary depending on the battery, a typical hobby grade battery used for multi-rotors and helicopters boast a continuous draw of 40-50C, with a 10s burst of 90-120C, much higher than the charging rating.
-		The number of cycles must be counted, as well as the current battery temperature to ensure that the battery is in a healthy state whenever in use.
-		This includes preventing charging when the battery has reached the end of its operational lifetime.
-		If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
+		%General guidelines suggest charging at no faster than 1C for optimal battery lifetime, meaning a 1300maH battery is charged at 1.3A for a duration of 1 hour.
+		%Discharge ratings vary depending on the battery, a typical hobby grade battery used for multi-rotors and helicopters boast a continuous draw of 40-50C, with a 10s burst of 90-120C, much higher than the charging rating.
+		%The number of cycles must be counted, as well as the current battery temperature to ensure that the battery is in a healthy state whenever in use.
+		%This includes preventing charging when the battery has reached the end of its operational lifetime.
+		%If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
 \section{Motor Control}
-	\subsection{Overview}
-		\begin{itemize}
-			\item Types of motor that could be used, brushed vs brushless
-			\item control methods for each type, pwm vs 3 phase control
-			\item Efficiency of each method
-			\item power draw
-			\item complexity
-		\end{itemize}
+	%\subsection{Overview}
+		%\begin{itemize}
+			%\item Types of motor that could be used, brushed vs brushless
+			%\item control methods for each type, pwm vs 3 phase control
+			%\item Efficiency of each method
+			%\item power draw
+			%\item complexity
+		%\end{itemize}
 	\subsection{Motor control}
 		Since a DC Brushless motor is being used, a more complex control method is required than a brushed DC motor.
-		Operating on a 3-phase AC supply, speed is varied by adjusting the frequency of the AC phases.
 		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and are widely available in a range of specifications due to their use in the remote control model industry.
-		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller.
-		This circuit could be designed and produced by hand, however due to the complexity, and the competitive pricing of the currently available products, it may prove a more effective choice to purchase an existing ESC.
-	\subsection{Feedback}
-		text goes here
+		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller, signals that can be generated simply with a microcontroller.
+		%This circuit could be designed and produced by hand, however due to the complexity, and the competitive pricing of the currently available products, it may prove a more effective choice to purchase an existing ESC.
+	%\subsection{Feedback}
+		%text goes here
 \end{document}
