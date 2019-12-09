@@ -5,3 +5,14 @@ https://blog.boostedboards.com/technical-progress-part-iii-lithium-battery/
 https://www.digikey.co.uk/en/articles/techzone/2016/sep/a-designer-guide-fast-lithium-ion-battery-charging
 
 https://core.ac.uk/download/pdf/22866117.pdf
+
+
+
+Image locations:
+https://www.ifixit.com/Guide/Boosted+Board+1st+Generation+Remote+Battery+Replacement/71943
+
+https://www.electric-skateboard.builders/t/diy-esk8board-remote/5087
+
+https://en.wikipedia.org/wiki/Seven-segment_display
+
+https://hallroad.org/1602-lcd-character-lcd-display-16x2-character-lcd-pakistan-arduino-lcd-in-pakistan.html
