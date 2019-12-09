@@ -4,8 +4,7 @@
 \usepackage{float}
 \begin{document}
 \section{Overview}
-The largest and bulkiest device on any electrical vehicle is the battery.
-Dense energy storage is a difficult task, and batteries are a must for almost all devices.
+Dense energy storage is a difficult task, and batteries are a must for pure electric vehicles.
 \section{Capacity}
 The larger the capacity of a battery network, the larger, heavier, and more expensive the battery network becomes.
 The use case of the system needs to be considered for choosing a capacity.
@@ -46,13 +45,19 @@ The effect of the height change on the required battery capacity will be non neg
 If we model the energy requirement as a simple vehicle hoist, the energy will be $mg\Delta h$.
 The total vertical distance is 75m.
 Roughly 90kJ more energy will be needed with a perfectly efficient system.
-Since a joule is one watt second, 60kJ is 25 watt hours.
-
-
+Since a joule is one watt second, 90kJ is 25 watt hours.
 
 Rough power estimates: 
 10 watt hours per mile - electric bike
 12 watt hours per journey (flat)
+
+The total Watt hours of the journey including the vertical distance is 37 watt hours.
+
+For a 5 journeys a week
+$37 \cdot 5 = 185Wh$
+185 watt hours is needed to make the journey from 100\% battery to flat.
+
+
 
 \section{Charging}
 Battery charging is difficult, specific charging circuits are needed for most modern high density batteries.
@@ -60,18 +65,29 @@ When trying to charge lots of batteries quickly a large amount of heat is genera
 Large modern batteries can also be very dangerous - and this is amplified when charging, so care needs to be taken that the design isn't a health hazard.
 \subsection{Lifespan}
 The lifespan of a battery is determined by the depth of discharge, and the family of battery used.
-Lithium ion batteries have a cycle life of about 300 at a depth of discharge of 100\%, and a cycle life of about 800 cycles at 50\% DoD.
-Lithium polymer batteries have a similar lifespan at 100\% DoD, but can increase up to 2000 charges at 50\% DoD.
-
-For this reason we are using LiPo batteiers as they offer the best battery life-span in terms of cycle count.
+\begin{figure}[H]
+    \centering
+    \scalebox{0.5}{\includegraphics{./ChargeCycles/DoD.png}}
+    \caption{Lifespan with respect to usage}
+    \label{fig:route}
+\end{figure}
+Lithium ion batteries have a cycle life of about 800 cycles at 50\% DoD, whereas Lithium polymer does much better at aproximatly 2000 charges at 50\%.
+For this reason we are using LiPo batteries as they offer the better battery life.
+Given the capacity to 100\% DoD is 185Wh, the final capacity will need to be 370Wh.
 \subsection{Rate of charge}
 The rate of charging is a nonlinear funciton with the charge of the battery, therefore it doesn't to quote charge time from 0\%-100\%.
 It makes sense to specify a rate of recharge from a specific depth of discharge.
-The spesific depth of discharge will be determined by the lifespan of the battery, and we can consider a "charge cycle" charging from DoD\% to 95\%.
+The specific depth of discharge will be determined by the lifespan of the battery, and we can consider a "charge cycle" charging from DoD\% to 95\%.
 
 %https://www.dnkpower.com/lithium-polymer-battery-guide/
 %https://batteryuniversity.com/learn/article/how_to_prolong_lithium_based_batteries
-\section{Regenerative breaking}
-Regenerative breaking is the process of turning unwanted mechanical energy (movement) into electrical energy that can charge the battery. 
-This makes stop start traffic much more efficient - and large amounts of energy can be re-claimed by going downhill.
+\section{Battery size}
+The battery size and weight are limiting factors on capacity.
+There are two parts to battery 'size' the volume, and mass of the battery are critical factors for a moving vehicle.
+\begin{figure}[H]
+    \centering
+    \scalebox{0.5}{\includegraphics{./Density.png}}
+    \caption{Credits: NASA - National Aeronautics and Space Administration}
+    \label{fig:route}
+\end{figure}
 \end{document}
