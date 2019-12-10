@@ -1,0 +1,133 @@
+\documentclass[journal,10pt]{IEEEtran}
+\usepackage{amsmath}
+\usepackage{textgreek}
+\begin{document}
+\section{Executive Summary}
+    This project consists of the design and construction of an electric skateboard, based on a traditional longboard.
+    
+\section{Introduction}
+    The scope of this project consists of designing and implementing an electric skateboard capable of carrying a large male on a round trip from the Joseph Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. Various areas of design had to be considered to ensure technical and financial viability, described within this report.
+\section{Board}
+    \subsection{Materials}
+\section{Drive-train}
+    \subsection{Transmission}
+
+    \subsection{Motor}
+        \subsubsection{Required Parameters}
+        The main requirements of the motor are:
+        \begin{itemize}
+        	\item Size- the motor has to fit under the board
+        	\item Torque- There should be enough torque to accelerate uphill - 10Nm at the wheel [figure]
+        	\item Speed- The $K_{v}$ motor parameter should be 
+        	\item Power- XXX
+        \begin{equation}
+            \resizebox{\textwidth}{%
+                $Torque = F \times R_{Wheels}  
+                F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}
+                $%
+            }
+        \end{equation}
+        
+        \end{itemize}
+        \subsubsection{AC Motor}
+        The AC induction motor is the most common type of motor in large industrial applications due to its efficiency, reliability and durability. However, using a DC battery source would require a variable frequency inverter to produce an AC output to the motor and to control the speed, and particularly with single phase induction motors the staring toque is very low which is unsuitable for this application. 
+        \subsubsection{DC Brushed Motor}
+        Using a commutator allows a motor to be run from a DC supply but by using carbon brushes adds a large amount of friction to the operation and varying the speed of this type of motor is harder especially if two motors were to be used as ensuring they are running at the same speed is challenging
+        \subsubsection{DC Brushless Motor}
+        With an electronic speed control a motor can be run from a DC supply with simple control of speed. Also as this eliminates the need for a commutator there is less friction so greater efficiency, longer lifespan and reduced wight for the same output power. This motor family also gives a large staring torque so the board will be able to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
+    \subsection{Battery}
+        \subsubsection{Overview}
+        \subsubsection{Capacity}
+        The greater the capacity of a battery network, the larger, heavier and more expensive the network becomes.The two main considerations regarding the required battery capacity are range and efficiency. The range will be determined by average daily usage and expected charge frequency (assumed to be once a week), while the daily usage consists of the round trip from Josephine Butler to the Science site (1.5km).
+        
+\section{Trucks}
+    \subsection{Operating Terrain}
+    The board will be operating in an urban environment and will thus be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still arise. As such, a suspension system is required to minimise the effects of the disturbances on the operation of the board.
+    \subsection{Speed Wobble}
+    This phenomenon consists of unpredictable vibrations induced in the board when running over uneven surfaces at high speed – if neglected, these oscillations could directly impinge on the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
+    \subsection{Potential Solutions}
+    One option is to buy existing truck suspension systems, which would include the benefits of being pre-tested for similar operating requirements and freeing up development time for other areas. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. This is preferred as
+\section{Wheels}
+    \subsection{Overview}
+    Many factors affect the choice of wheels – rolling resistance is affected by the materials of the wheels and bearings, with the ability to transfer power dependent on the radii and material of the driven wheels.
+    \subsection{Wheel Materials}
+    Commercial longboard wheels are typically made from polyurethane, with construction normally consisting of a hardened plastic core with the outer layers and surface of polyurethane. This material achieves a μ-rolling in the range of 0.04-0.08 – while this is sufficiently small to provide low rolling resistance, polyurethane also only provides a μ-static of ~0.2, limiting the amount of torque than can be transferred from the motor to road surface. This can be improved by using rubber for the driven wheels as rubber achieves a μstatic in the range of 0.35-0.45, allowing for an increase in torque transmitted of 75-125\%.
+    \subsection{Bearing Materials}
+    Bearing materials for longboard wheels come in three different material families: steel, titanium and ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium . This would suggest much less energy lost from elastic deformation. However, Silicon Nitride also exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. As such ceramic may be inadvisable as the board will be used in an environment not dedicated to skateboarding and is likely to suffer various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 mark for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal of the three, increasing savings in the long-run by requiring less maintenance. 
+    \subsection{Wheel Dimensions}
+    Longboard wheels typically vary in diameter between 60-100mm with a contact patch width of ≈30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing as greater torque conversion. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
+    \subsection{Estimates of Rolling Resistance}
+    
+    \begin{equation*}
+        \resizebox{\textwidth}{%
+            $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  (r_f cos(\alpha))(F_{load}/(r_o – r_i))$%
+        }
+    \end{equation*}
+    
+    Static (Skateboard Stationary, Wheels not Moving):
+    FRES-rubber ≈ 10.98N	FRES-polyurethane ≈ 4.88N
+    FRES-Total-Static = 2 FRES-rubber + 2 FRES-polyurethane = 31.72N 
+    Dynamic
+    FRES-rubber ≈ 0.37N	FRES-polyurethane ≈ 1.95N
+    FRES-Total-Dynamic = 2 FRES-rubber + 2 FRES-polyurethane = 4.64N
+
+    
+
+
+\section{Control}
+    \subsection{Overview}
+    	Any complex electronic system will almost always require a control unit to operate it.
+    	There are three aspects of control that must be designed for; the user interface to control the skateboard, battery management, and motor/drive train control.
+    	For this application, and the one-off nature of the product, it would be most effective to use a micro-controller system on a chip for control, rather than a bespoke hardware solution.
+    	This is due to the ease of altering functionality, and the high volume of support documentation for these units.
+    	Due to time and budget constraints, it would also be more effective to search for existing circuit modules than trying to design and build bespoke layouts.
+    \subsection{User Interface}
+    	%\subsection{Overview}
+    		%\begin{itemize}
+    			%\item Throttle (Both variable and on/off)
+    			%\item Status meters to the rider (battery percentage, throttle level etc)
+    		%\end{itemize}
+    	\subsubsection{Throttle Control}
+    		The user needs to be able to control the speed of the board intuitively and quickly, to ensure safe riding.
+    		The market leader utilises wireless controller (as shown Fig XXX)allowing for braking, accelerating and reverse, with fine step-wise control for each by a roller potentiometer.
+    		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
+    		A potential solution to this is a dual pressure pad system, pictured XXX.
+    	\subsubsection{Status Meters}
+    		The user needs to be able to understand what the remaining range of the board is, so that they will not undertake a journey where they will run out of charge mid-journey.
+    	The current market leader uses an array of LEDs on its controller for status information.
+    		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider.
+    \subsection{Battery Management}
+    	%\subsection{Overview}
+    		%\begin{itemize}
+    			%\item Safe charging and discharging 
+    			%\item Monitoring battery health including charge cycle number
+    		%\end{itemize}
+    	\subsubsection{Charging/Discharging}
+    	***Care must be taken to ensure that in normal operation the battery is not charged or discharged outside of safe conditions.
+    	This includes tracking the number of cycles the battery has gone through, as well as temperature, with a view to stop the rider from using the system if the battery is no longer in a safe state.***
+    	
+    		%General guidelines suggest charging at no faster than 1C for optimal battery lifetime, meaning a 1300maH battery is charged at 1.3A for a duration of 1 hour.
+    		%Discharge ratings vary depending on the battery, a typical hobby grade battery used for multi-rotors and helicopters boast a continuous draw of 40-50C, with a 10s burst of 90-120C, much higher than the charging rating.
+    		%The number of cycles must be counted, as well as the current battery temperature to ensure that the battery is in a healthy state whenever in use.
+    		%This includes preventing charging when the battery has reached the end of its operational lifetime.
+    		%If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
+    \subsection{Motor Control}
+    	%\subsection{Overview}
+    		%\begin{itemize}
+    			%\item Types of motor that could be used, brushed vs brushless
+    			%\item control methods for each type, pwm vs 3 phase control
+    			%\item Efficiency of each method
+    			%\item power draw
+    			%\item complexity
+    		%\end{itemize}
+    	\subsubsection{Motor control}
+    		Since a DC Brushless motor is being used, a more complex control method is required than a brushed DC motor.
+    		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and are widely available in a range of specifications due to their use in the remote control model industry.
+    		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller, signals that can be generated simply with a microcontroller.
+    		%This circuit could be designed and produced by hand, however due to the complexity, and the competitive pricing of the currently available products, it may prove a more effective choice to purchase an existing ESC.
+    	%\subsection{Feedback}
+    		%text goes here
+\section{Conclusion}
+\section{References}
+
+\end{document}
