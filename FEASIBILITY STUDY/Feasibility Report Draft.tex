@@ -38,13 +38,26 @@
     \subsection{Battery}
         \subsubsection{Overview}
         \subsubsection{Capacity}
-        The greater the capacity of a battery network, the larger, heavier and more expensive the network becomes.The two main considerations regarding the required battery capacity are range and efficiency. The range will be determined by average daily usage and expected charge frequency (assumed to be once a week), while the daily usage consists of the round trip from Josephine Butler to the Science site (1.5km).
-        
+        The greater the capacity of a battery network, the larger, heavier and more expensive the network becomes.The two main considerations regarding the required battery capacity are range and efficiency. The range will be determined by average daily usage and expected charge frequency (assumed to be once a week), while the daily usage consists of the round trip from Josephine Butler to the Science site (1.5km). [insert route figure]
+        The elevation and gradient variations can be seen in figures [insert here]
+        The total change in elevation consists of 50 meters uphill and 25 meters down when heading towards Josephine Butler. The effect of the height change on battery capacity can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly efficient system.
+            \subsubsubsection{Power Requirement Estimates}
+            10Wh/mile (based off electric bike: 12Wh/mile)
+            Total Power of Journey (including vertical): 37Wh
+            Per Week Consumption: 5 x 37.5Wh = 185Wh
+            -Absolute Minimum Required Capacity of 185Wh
+        \subsubsection{Charging}
+            Charging the battery is a non-trivial concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat assosciated with large energy transfers.
+            \subsubsubsection{Lifespan}
+            Lifespan of a battery is determined by the depth of discharge and the family of battery used.[insert lifespan graph]
+            Lithium-ion batteries have a life cycle of about 800 cycles at 50\% - Lithium Polymer cells perform better at approx. 2000 charges at the same DoD. Given that the capacity required at 100\% DoD is 185Wh, the final required capacity will be 370Wh to achieve 50\% DoD.
+            \subsubsubsection{Rate of Charge}
+            As the rate of charge is a nonlinear function wrt. the charge level of the battery, rate of recharge is specified from a specific depth of discharge - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life.
 \section{Trucks}
     \subsection{Operating Terrain}
     The board will be operating in an urban environment and will thus be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still arise. As such, a suspension system is required to minimise the effects of the disturbances on the operation of the board.
     \subsection{Speed Wobble}
-    This phenomenon consists of unpredictable vibrations induced in the board when running over uneven surfaces at high speed – if neglected, these oscillations could directly impinge on the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
+    This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running over uneven surfaces at high speed – if neglected, these oscillations could directly impinge on the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
     One option is to buy existing truck suspension systems, which would include the benefits of being pre-tested for similar operating requirements and freeing up development time for other areas. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. This is preferred as
 \section{Wheels}
@@ -60,19 +73,14 @@
     
     \begin{equation*}
         \resizebox{\textwidth}{%
-            $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  (r_f cos(\alpha))(F_{load}/(r_o – r_i))$%
+            $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  r_f cos(\alpha)(\frac{F_{load}}{r_o – r_i})$%
         }
     \end{equation*}
-    
-    Static (Skateboard Stationary, Wheels not Moving):
     FRES-rubber ≈ 10.98N	FRES-polyurethane ≈ 4.88N
     FRES-Total-Static = 2 FRES-rubber + 2 FRES-polyurethane = 31.72N 
     Dynamic
     FRES-rubber ≈ 0.37N	FRES-polyurethane ≈ 1.95N
     FRES-Total-Dynamic = 2 FRES-rubber + 2 FRES-polyurethane = 4.64N
-
-    
-
 
 \section{Control}
     \subsection{Overview}
