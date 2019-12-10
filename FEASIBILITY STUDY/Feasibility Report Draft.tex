@@ -2,7 +2,11 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{float}
+\title{ \begin{huge}
+\textbf{L2 Design Feasibility Report: Electric Skateboard} 
+\end{huge} }
 \begin{document}
+\maketitle
 \section{Executive Summary}
         This project consists of the design and construction of an electric skateboard, based on a traditional longboard.
     
@@ -10,7 +14,7 @@
         The scope of this project consists of designing and implementing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. Various areas of design had to be considered to ensure technical and financial viability, described within this report.
 \section{Board}
     \subsection{Overview}
-        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed for a FEA to be performed, allowing the locations and values of max shear stress to be determined. Additionally, the strain and displacement profiles of the board under load were obtained.
+        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, allowing the locations and values of max shear stress to be determined. Additionally, the strain and displacement profiles of the board under load were obtained.
     \subsection{Component Arrangements}
         Several arrangement options for the electrical components were explored, as shown in the figures below, with limiting factors consisting of:
         \begin{itemize}
@@ -27,7 +31,18 @@
                 \\*Board unbalanced(tail-heavy)
                 \\*Position of components detrimental to user comfort}
                 \label{fig:ConceptB}
-            \end{figure}    
+            \end{figure}  
+        \begin{figure}[H]
+                \centering
+                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Concept_C.png}}
+                \caption{Concept C
+                \\*Maximum ground clearance
+                \\*Components directly over front truck - no moment about front truck
+                \\*Head-heavy - prevents board from tipping up
+                \\*Components far from driven wheels - increased power losses
+                \\*Components susceptible to damage at front}
+                \label{fig:ConceptC}
+            \end{figure} 
         [Pros and Cons of each] - eventually it was decided that the arrangement shown in [insert figure name] provided the optimal compromise between the four factors.
     \subsection{Structural Analysis}
         The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board.n An additional load of 160N was applied at the centre of the wheelbase to model the weight of the electrical components.The simulation (utilising the Finite Element Method) computed the maximum stress to be [insert value], located at the joint between the front tuck and bottom of board [see figure XXX]. Max displacement was calculated to be approx.[insert value], allowing minimum ground clearance to be [insert value] - this was considered to be a suitable value as it allows for electrical components to have a max height of [insert value] with a FOS of 2.
