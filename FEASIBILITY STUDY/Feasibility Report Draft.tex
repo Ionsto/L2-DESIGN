@@ -76,7 +76,30 @@
             \end{figure}
         Eventually it was decided that the arrangement shown in concept A provided the optimal compromise between the four factors.
     \subsection{Structural Analysis}
-        The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation (utilising the Finite Element Method) computed the maximum Von Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board [see figure XXX]. Comparing this to the yield strength of maple wood, determined as approximately 65.5MPa, a simple ratio was calculated to give a predicted Factor of Safety(hereinafter noted as FOS) value of approximately 2.07. A further simulation was performed with the rider's load scaled up by this FOS, and the load centred at a single 10cmx10cm area at the centre of the wheelbase. Max displacement was calculated to be approximately 18.19mm. This with consideration of the original board height - 110mm, allows a minimum ground clearance of approximately 91.81mm - this was considered to be a suitable value as it allows for electrical components to have a max height of 45.9mm considering a FOS of 2.
+        The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation (utilising the Finite Element Method) computed the maximum Von Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown below in figures 6 and 7 below.
+        \begin{figure}[H]
+                \centering
+                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Stress_Analysis_Top.png}}
+                \caption{FEM Von Mises Stress Analysis of Top Surface of the Board
+                }
+                \label{fig:stressTop}
+            \end{figure}
+        \begin{figure}[H]
+                \centering
+                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Stress_Analysis_Bottom.png}}
+                \caption{FEM Von Mises Stress Analysis of Bottom Surface of the Board
+                }
+                \label{fig:stressBottom}
+            \end{figure}
+        Comparing this to the yield strength of maple wood, determined as approximately 65.5MPa, a simple ratio was calculated to give a predicted Factor of Safety(hereinafter noted as FOS) value of approximately 2.07. A further simulation was performed with the rider's load scaled up by this FOS, and the load centred at a single 10cmx10cm area at the centre of the wheelbase. Max displacement was calculated to be approximately 18.19mm, as shown in figure 8 below. 
+        \begin{figure}[H]
+                \centering
+                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Displacement.png}}
+                \caption{Displacement Contour of Board When Put Under Maximum Loading
+                }
+                \label{fig:Displacement}
+            \end{figure}
+        This with consideration of the original board height - 110mm, allows a minimum ground clearance of approximately 91.81mm - this was considered to be a suitable value as it allows for electrical components to have a max height of 45.9mm considering a FOS of 2.
     
 \section{Powertrain}
     \subsection{Transmission}
