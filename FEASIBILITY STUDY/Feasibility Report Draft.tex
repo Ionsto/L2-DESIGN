@@ -78,19 +78,19 @@
     \subsection{Structural Analysis}
         The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown below in the figures below.
         \begin{figure}[H]
-                \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Top".png}}
-                \caption{FEM Von Mises Stress Analysis of Top Surface of the Board
-                }
-                \label{fig:stressTop}
-            \end{figure}
+            \centering
+            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Top".png}}
+            \caption{FEM Von Mises Stress Analysis of Top Surface of the Board
+            }
+            \label{fig:stressTop}
+        \end{figure}
         \begin{figure}[H]
-                \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Bottom".png}}
-                \caption{FEM Von Mises Stress Analysis of Bottom Surface of the Board
-                }
-                \label{fig:stressBottom}
-            \end{figure}
+            \centering
+            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Bottom".png}}
+            \caption{FEM Von Mises Stress Analysis of Bottom Surface of the Board
+            }
+            \label{fig:stressBottom}
+        \end{figure}
         Comparing this to the yield strength of maple wood, approximately 65.5MPa, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm, shown in figure 8 below. 
         \begin{figure}[H]
                 \centering
@@ -108,10 +108,10 @@
         \subsubsection{Gearing}
             Having the output of the motor go directly into a gear arrangement/gear box would allow for a vast array of gear ratios - however, this would require strong gears to provide the required torque, and the large range of output speeds of DC motors may make large gear ratios unnecessary.
         \subsubsection{Chain}
-            Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need of lubrication to prevent wear and oxidation. 
+            Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need for lubrication to prevent wear and corrosion. 
         \subsubsection{Hub Motor}
             Hub motors are entirely contained in the wheels of the skateboard, offering many advantages including quietness, low maintenance and sleek appearance.
-            However as they have no gearing and are limited in terms of space of the wheels, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
+            However as they have no gearing and are limited in terms of the space of the wheels, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
     \subsection{Motor}
         \subsubsection{Required Parameters}
         %\The main requirements of the motor are:
@@ -215,7 +215,7 @@
     \\*Dynamic
     \\*F_{res-rubber} \approx 0.37N	
     \\*F_{res-polyurethane} \approx 1.95N
-    \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N}%
+    \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N}
     XXX[reference paper used]XXX
 \section{Control}
     \subsection{Overview}
