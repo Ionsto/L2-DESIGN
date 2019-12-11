@@ -26,7 +26,7 @@
             \end{itemize}
         \begin{figure}[H]
                 \centering
-                \scalebox{0.25}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_A".png}}
+                \scalebox{0.25}{\includegraphics{"./Board/Concept_A".png}}
                 \caption{Concept A
                 \\*Deck clearance
                 \\*Motor close to driven wheel - efficient power transfer
@@ -35,7 +35,7 @@
             \end{figure} 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_B".png}}
+                \scalebox{0.15}{\includegraphics{"./Board/Concept_B".png}}
                 \caption{Concept B
                 \\*Maximum ground clearance, low transmission as components close to driven wheel
                 \\*Board unbalanced (tail-heavy)
@@ -44,7 +44,7 @@
             \end{figure}  
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_C".png}}
+                \scalebox{0.15}{\includegraphics{"./Board/Concept_C".png}}
                 \caption{Concept C
                 \\*Maximum ground clearance
                 \\*Components directly over front truck - no moment about front truck
@@ -55,7 +55,7 @@
             \end{figure} 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_D".png}}
+                \scalebox{0.15}{\includegraphics{"./Board/Concept_D".png}}
                 \caption{Concept D
                 \\*Well-balanced
                 \\*Motor close to driven wheel - efficient power transmission
@@ -66,7 +66,7 @@
             \end{figure} 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_E".png}}
+                \scalebox{0.15}{\includegraphics{"./Board/Concept_E".png}}
                 \caption{Concept E
                 \\*Deck clearance
                 \\*Well-balanced as components aligned with centroid of board
@@ -80,14 +80,14 @@
         The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown below in the figures below.
         \begin{figure}[H]
             \centering
-            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Top".png}}
+            \scalebox{0.15}{\includegraphics{"./Board/Stress_Analysis_Top".png}}
             \caption{FEM Von Mises Stress Analysis of Top Surface of the Board
             }
             \label{fig:stressTop}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Bottom".png}}
+            \scalebox{0.15}{\includegraphics{"./Board/Stress_Analysis_Bottom".png}}
             \caption{FEM Von Mises Stress Analysis of Bottom Surface of the Board
             }
             \label{fig:stressBottom}
@@ -95,7 +95,7 @@
         Comparing this to the yield strength of maple wood, approximately 65.5MPa, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm, shown in figure 8 below. 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Displacement".png}}
+                \scalebox{0.15}{\includegraphics{"./Board/Displacement".png}}
                 \caption{Displacement Contour of Board When Put Under Maximum Loading
                 }
                 \label{fig:Displacement}
@@ -107,7 +107,7 @@
         \subsubsection{Belt}
             Due to the elasticity of rubber belts, this option provides low noise and vibration, and allows for efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan. 
         \subsubsection{Gearing}
-            Having the output of the motor go directly into a gear arrangement/gear box would allow for a vast array of gear ratios - however, this would require strong gears to provide the required torque, and the large range of output speeds of DC motors may make large gear ratios unnecessary.
+            Gears provide a vast array of gear ratios but the large range of output speeds of motors makes large gear ratios unnecessary.
         \subsubsection{Chain}
             Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need for lubrication to prevent wear and corrosion. 
         \begin{figure}[H]
@@ -119,7 +119,7 @@
         \begin{figure}[H]
             \centering
             \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain2Lab".png}}
-            \caption{Arrangement with Belt/ Chain}
+            \caption{Arrangement with Belt or Chain}
             \label{fig:Drivetrain2}
         \end{figure}
         \begin{figure}[H]
@@ -133,20 +133,21 @@
             However as they have no gearing and are limited in terms of the space of the wheels, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
     \subsection{Motor}
         \subsubsection{Required Parameters}
-        %\The main requirements of the motor are:
+        \The main requirements of the motor at 8$ms^{-1}$, with a slope of 10$^{\circ}$ and 1$ms^{-2}$ acceleration are
         \begin{itemize}
-        	\item Size- the motor must fit under the board
-        	\item Torque- There should be enough torque to accelerate uphill - 10Nm at the wheel [figure]
-        	\item Speed- The $K_{v}$ motor parameter should be 
-        	\item Power- XXX
+        	\item Size- The motor must fit under the board as well as being relatively lightweight
+        	\item Torque- 13Nm at the wheel 
+        	\item Speed- The $K_{v}$ motor parameter should be 250
+        	\item Power- 3000w 
         \end{itemize}
         \begin{gather*}
             F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}
-            \\F_{Acceleration} = Weight \times Gravity
+            \\F_{Acceleration} = Mass \times Acceleration
             \\F_{Gravity} = Weight \times sin(Slope  Angle)
             \\F_{Rolling Resistance} = 4.64N
-            \\Torque = F \times R_{Wheels}
-            \\Wheel RPM = \frac{V}{R}\times \frac{60}{2\pi}
+            \\Torque = F_{Total} \times R_{Wheels}
+            \\Wheel RPM = \frac{Velocity (ms^{-1})}{Radius}\times \frac{60}{2\pi}
+            \\Motor Power = \frac{F_{Total} \times Velocity (ms^{-1})}{Efficiency}
         \end{gather*}
 
         \subsubsection{AC Motor}
@@ -249,13 +250,13 @@
     \subsection{User Interface}
         \begin{figure}[H]
             \centering
-            \scalebox{0.2}{\includegraphics{"FEASIBILITY STUDY/Control/Boosted Remote Labelled".png}}
+            \scalebox{0.2}{\includegraphics{"./Control/Boosted Remote Labelled".png}}
             \caption{Market Leader's Remote Control}
             \label{fig:Boosted Remote}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \scalebox{0.2}{\includegraphics{"FEASIBILITY STUDY/Control/Pressure Pads
+            \scalebox{0.2}{\includegraphics{"./Control/Pressure Pads
             Labelled".png}}
             \caption{Dual Pressure Pad Control}
             \label{fig:Pressure Pads}
@@ -272,13 +273,13 @@
     		
     	\begin{figure}[H]
             \centering
-            \scalebox{0.4}{\includegraphics{"FEASIBILITY STUDY/Control/7 Segment Labelled".png}}
+            \scalebox{0.4}{\includegraphics{"./Control/7 Segment Labelled".png}}
             \caption{7 Segment Displays}
             \label{fig:7 seg}
         \end{figure}
     	\begin{figure}[H]
             \centering
-            \scalebox{0.4}{\includegraphics{"FEASIBILITY STUDY/Control/LCD Labelled".jpg}}
+            \scalebox{0.4}{\includegraphics{"./Control/LCD Labelled".jpg}}
             \caption{Arduino LCD}
             \label{fig:LCD}
         \end{figure}
