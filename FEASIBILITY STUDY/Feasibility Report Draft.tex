@@ -167,14 +167,17 @@
             With an electronic speed controller a motor can be run from a DC supply with speed control and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque, enabling the board to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
     \subsection{Battery}
         \subsubsection{Capacity}
-            The greater the capacity of a battery network, the heavier and more expensive it becomes.The two main considerations regarding the required capacity are range and efficiency. The range will be determined by average daily usage (a 1.5 km round trip between Butler and Science site) and expected charge frequency (assumed to be once a week).
+            The greater the capacity of a battery network, the heavier and more expensive it becomes.The two main considerations regarding the required capacity are range and lifespan. The range will be determined by average daily usage (a 1.5 km round trip between Butler and Science sites, shown in Fig. \ref{fig:route}) and expected charge frequency (assumed to be once a week).
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/RouteAnalysis/Route.png}}
                 \caption{Typical Daily Route}
                 \label{fig:route}
             \end{figure}
+            Extra energy considerations will be needed for the range - as there is a relatively large height change throughout the route.
             The elevation and gradient variations can be seen in the graphs below, with data sourced from various GPS public databases via an online website \cite{GPSDatabase}.
+            Fig \ref{fig:route_el} shows the elevation of the route and makes a difference for the maximum capacity needed.
+            Fig \ref{fig:route_grad} shows the gradient of this route, which will effect the maximum torque required.
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/RouteAnalysis/elevation.png}}
@@ -196,19 +199,19 @@
         %\subsubsection{Charging}
             %Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat associated with large energy transfers.
         \subsubsection{Lifespan}
-            The Lifespan of a battery is determined by the depth of discharge and the family of battery used.
+            The Lifespan of a battery is determined by the depth of discharge and the family of battery used. It can be seen in Fig. \ref{fig:DoD} how lithium polymer batteries have a longer lifespan at similar discharge depths. Data from 
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/ChargeCycles/DoD.png}}
-                \caption{Typical daily route}
-                \label{fig:route}
+                \caption{Lifespan vs depth of discharge}
+                \label{fig:DoD}
             \end{figure}
             Lithium-ion batteries have a life cycle of approx. 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approx. 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD for a full use.
         \subsubsection{Rate of Charge}
             As the rate of charge is a nonlinear function wrt. the charge level, the charge rate is specified from a certain DoD - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life. Ideally, the battery will charge from 50\% empty to full overnight. This will be achievable at a sub 1C rate [pushing 370 Watts for 1 hour], with .
         \subsubsection{Battery Size}
         Battery volume and weight are limiting factors wrt. capacity. Volume affects how the components can be arranged on the board, while weight directly impacts the board's performance.    
-        Using the calculated capacity the volume and mass can be calculated with the volumetric & graviometric density. Using values from \ref{fig:Battery Size}, the volume comes to about 1.2 Litres and the mass is 2.3Kg.
+        Using the calculated capacity the volume and mass can be calculated with the volumetric \& graviometric density. Using values from \ref{fig:Battery Size}, the volume comes to about 1.2 Litres and the mass is 2.3Kg.
             \begin{figure}[H]
                 \centering
                 \scalebox{0.40}{\includegraphics{./Battery/Density.png}}
@@ -226,7 +229,7 @@
     \subsection{Overview}
         Many factors affect the choice of wheels – rolling resistance is affected by the wheel and bearing materials, with the torque transferred dependent on the radii and material of the driven wheels.
     \subsection{Wheel Materials}
-        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
+        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range 0.04-0.08. \cite{wheel_data} While this is sufficiently small to provide low rolling resistance, polyurethane only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
         Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 $kg/mm^{2}$ \cite{ceramic_data1}, approximately 640\% greater than AISI-52100 steel \cite{steel_data} and ASTM-7 Titanium \cite{titanium_data}, leading to reduced energy loss from elastic deformation.  However, Silicon Nitride exhibits a yield strength of 170MPa \cite{ceramic_data2}: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal type, less maintenance will be required. 
     \subsection{Wheel Dimensions}
