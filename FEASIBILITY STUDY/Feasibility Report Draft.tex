@@ -14,14 +14,14 @@
         The scope of this project consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards [reference]. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, giving the locations and values of max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
+        The board provided was a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards [reference]. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
     \subsection{Component Arrangements}
         Several arrangement options for the electrical components were explored, as shown in the figures below, with limiting factors consisting of:
         \begin{itemize}
             	\item Ground Clearance
-            	\item Power Transmission
-            	\item Balance and Centre of Mass
-            	\item Passenger Comfort
+            	\item Transmission Efficiency
+            	\item Balance 
+            	\item Rider Comfort
             \end{itemize}
         \begin{figure}[H]
                 \centering
@@ -36,9 +36,9 @@
                 \centering
                 \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_B".png}}
                 \caption{Concept B
-                \\*Provides maximum ground clearance, reduces power train losses as components close to driven wheel
-                \\*Board unbalanced(tail-heavy)
-                \\*Position of components detrimental to user comfort}
+                \\*Maximum ground clearance, low transmission as components close to driven wheel
+                \\*Board unbalanced (tail-heavy)
+                \\*Component position detrimental to user comfort}
                 \label{fig:ConceptB}
             \end{figure}  
         \begin{figure}[H]
@@ -110,7 +110,7 @@
         \subsubsection{Chain}
             Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need of lubrication to prevent wear and oxidation. 
         \subsubsection{Hub Motor}
-            Hub motors are entirely contained in the wheels of the skateboard and offer many advantages- they are quiet, low maintenance and have a sleek appearance. [Details]
+            Hub motors are entirely contained in the wheels of the skateboard, offering many advantages- they are quiet, low maintenance and have a sleek appearance.
             However as they have no gearing and are limited in terms of space of the wheels, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
     \subsection{Motor}
         \subsubsection{Required Parameters}
