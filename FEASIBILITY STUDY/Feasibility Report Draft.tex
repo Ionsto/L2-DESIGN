@@ -141,7 +141,7 @@
         	\item Size- The motor must fit under the board as well as being relatively lightweight
         	\item Torque- 13Nm at the wheel 
         	\item Speed- The $K_{v}$ motor parameter should be 250
-        	\item Power- 3000w 
+        	\item Power- 2000w assuming no acceleration and 8$ms^{-1}$
         \end{itemize}
         \begin{gather*}
             F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}
@@ -156,9 +156,9 @@
         \subsubsection{AC Motor}
             The AC induction motor is the most common type of motor in large industrial applications due to its efficiency, reliability and durability. However, using a DC battery source would require a variable frequency inverter to produce an AC output to the motor and to control the speed, and particularly with single phase induction motors the staring toque is very low, which is unsuitable for this application. 
         \subsubsection{DC Brushed Motor}
-            Using a commutator allows a motor to be run from a DC supply but by using carbon brushes adds a large amount of friction to the operation and varying the speed of this type of motor is harder, especially if two motors were implemented and required to run synchronously.
+            Using a commutator allows a motor to be run from a DC supply but using carbon brushes adds a large amount of friction and varying the speed of this type of motor is harder, especially if two motors were implemented and run synchronously.
         \subsubsection{DC Brushless Motor}
-            With an electronic speed control a motor can be run from a DC supply with simple control of speed. Also as this eliminates the need for a commutator there is less friction so greater efficiency, longer lifespan and reduced wight for the same output power. This motor family also gives a large staring torque so the board will be able to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
+            With an electronic speed controller a motor can be run from a DC supply with simple control of speed and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque so the board will be able to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
     \subsection{Battery}
         \subsubsection{Capacity}
             The greater the capacity of a battery network, the heavier and more expensive it becomes.The two main considerations regarding the required capacity are range and efficiency. The range will be determined by average daily usage (a 15.km round trip between Butler and Science site) and expected charge frequency (assumed to be once a week).
@@ -285,7 +285,7 @@
             \label{fig:LCD}
         \end{figure}
     \subsection{Battery Management}
-    	Care must be taken to ensure that in normal operation the battery is charged safely.
+    	Care must be taken to ensure that during normal operation the battery is charged safely.
     	This includes tracking the number of cycles the battery has gone through, as well as the temperature, with a view to stopping the rider using the system if the battery is no longer in a safe state.
     	
     		%General guidelines suggest charging at no faster than 1C for optimal battery lifetime, meaning a 1300maH battery is charged at 1.3A for a duration of 1 hour.
