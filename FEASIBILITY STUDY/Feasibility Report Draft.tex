@@ -8,13 +8,13 @@
 \begin{document}
 \maketitle
 \section{Executive Summary}
-        This project consists of the design and construction of an electric skateboard, based on a traditional longboard.
+        This project consists of the design and construction of an electric skateboard based on a traditional longboard.
     
 \section{Introduction}
-        The scope of this project consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. 
+        The scope of this project consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a During the Christmas break, we will be conducting general house Periodic Inspections and carrying out repairs which may be needed. Please ensure your house is clean and tidy before you leave.  FEA to be performed, allowing the locations and values of max shear stress to be determined. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
+        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards [reference]. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, giving the locations and values of max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
     \subsection{Component Arrangements}
         Several arrangement options for the electrical components were explored, as shown in the figures below, with limiting factors consisting of:
         \begin{itemize}
@@ -76,7 +76,7 @@
             \end{figure}
         Eventually it was decided that the arrangement shown in concept A provided the optimal compromise between the four factors.
     \subsection{Structural Analysis}
-        The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation (utilising the Finite Element Method) computed the maximum Von Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown below in figures 6 and 7 below.
+        The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown below in the figures below.
         \begin{figure}[H]
                 \centering
                 \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Top".png}}
@@ -91,7 +91,7 @@
                 }
                 \label{fig:stressBottom}
             \end{figure}
-        Comparing this to the yield strength of maple wood, determined as approximately 65.5MPa, a simple ratio was calculated to give a predicted Factor of Safety(hereinafter noted as FOS) value of approximately 2.07. A further simulation was performed with the rider's load scaled up by this FOS, and the load centred at a single 10cmx10cm area at the centre of the wheelbase. Max displacement was calculated to be approximately 18.19mm, as shown in figure 8 below. 
+        Comparing this to the yield strength of maple wood, approximately 65.5MPa, a Factor of Safety value of approximately 2 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. Max displacement was calculated to be approximately 18.19mm, as shown in figure 8 below. 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Displacement".png}}
@@ -108,15 +108,15 @@
         \subsubsection{Gearing}
             Having the output of the motor go directly into a gear arrangement/gear box would allow for a vast array of gear ratios - however, this would require strong gears to provide the required torque, and the large range of output speeds of DC motors may make large gear ratios unnecessary.
         \subsubsection{Chain}
-            Using a chain drive is the most efficient way to transmit power out of the options covered, with an typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need of lubrication to prevent wear and oxidation. 
+            Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need of lubrication to prevent wear and oxidation. 
         \subsubsection{Hub Motor}
-            Hub motors are entirely contained in the wheels of the skateboard and they offer many advantages- mainly they are extremely quiet, low maintenance and have a sleek appearance. [Details]
-            However as they have no gear ratios and are limited in terms of space of the wheels they provide less torque than a traditional drive. [cooling?, wheel customization, ride- thin polyurethane]
+            Hub motors are entirely contained in the wheels of the skateboard and offer many advantages- they are quiet, low maintenance and have a sleek appearance. [Details]
+            However as they have no gearing and are limited in terms of space of the wheels, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
     \subsection{Motor}
         \subsubsection{Required Parameters}
-        The main requirements of the motor are:
+        %\The main requirements of the motor are:
         \begin{itemize}
-        	\item Size- the motor has to fit under the board
+        	\item Size- the motor must fit under the board
         	\item Torque- There should be enough torque to accelerate uphill - 10Nm at the wheel [figure]
         	\item Speed- The $K_{v}$ motor parameter should be 
         	\item Power- XXX
@@ -137,7 +137,7 @@
             With an electronic speed control a motor can be run from a DC supply with simple control of speed. Also as this eliminates the need for a commutator there is less friction so greater efficiency, longer lifespan and reduced wight for the same output power. This motor family also gives a large staring torque so the board will be able to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
     \subsection{Battery}
         \subsubsection{Capacity}
-            The greater the capacity of a battery network, the larger, heavier and more expensive the network becomes.The two main considerations regarding the required battery capacity are range and efficiency. The range will be determined by average daily usage and expected charge frequency (assumed to be once a week), while the daily usage consists of the round trip from Josephine Butler to the Science site (1.5km).
+            The greater the capacity of a battery network, the heavier and more expensive it becomes.The two main considerations regarding the required capacity are range and efficiency. The range will be determined by average daily usage (a 15.km round trip between Butler and Science site) and expected charge frequency (assumed to be once a week).
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/RouteAnalysis/Route.png}}
@@ -157,14 +157,14 @@
                 \caption{Gradient of Route}
                 \label{fig:gradient}
             \end{figure}
-            The total change in elevation consists of 50 meters uphill and 25 meters down when heading towards Josephine Butler. The effect of the height change on battery capacity can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly efficient system.
+            The total elevation change consists of 50m uphill and 25m down (heading towards Josephine Butler). The energy required can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly efficient system.
         \subsubsection{Power Requirement Estimates}
             10Wh/mile (based off electric bike: 12Wh/mile)
             Total Power of Journey (including vertical): 37Wh
             Per Week Consumption: 5 x 37.5Wh = 185Wh
             -Absolute Minimum Required Capacity of 185Wh
         \subsubsection{Charging}
-            Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat assosciated with large energy transfers.
+            Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat associated with large energy transfers.
         \subsubsection{Lifespan}
             Lifespan of a battery is determined by the depth of discharge and the family of battery used.
             \begin{figure}[H]
@@ -173,11 +173,11 @@
                 \caption{Typical daily route}
                 \label{fig:route}
             \end{figure}
-            Lithium-ion batteries have a life cycle of about 800 cycles at 50\%, whereas Lithium Polymer cells perform better at approx. 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, the final required capacity will be 370Wh to achieve 50\% DoD.
+            Lithium-ion batteries have a life cycle of approx. 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approx. 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD.
         \subsubsection{Rate of Charge}
-            As the rate of charge is a nonlinear function wrt. the charge level of the battery, rate of recharge is specified from a specific depth of discharge - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life.
+            As the rate of charge is a nonlinear function wrt. the charge level of the battery, rate of recharge is specified from a DoD - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life.
         \subsubsection{Battery Size}
-        The battery volume and weight are limiting factors wrt. capacity. The former, affects how the components can be arranged on the board, while the latter has direct impact on the board's performance.    
+        Battery volume and weight are limiting factors wrt. capacity. Volume affects how the components can be arranged on the board, while weight directly impacts the board's performance.    
             \begin{figure}[H]
                 \centering
                 \scalebox{0.40}{\includegraphics{./Battery/Density.png}}
@@ -186,20 +186,20 @@
             \end{figure}
 \section{Trucks}
     \subsection{Operating Terrain}
-        The board will be operating in an urban environment and will thus be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still arise. As such, a suspension system is required to minimise the effects of the disturbances on the operation of the board.
+        The board will be operating in an urban environment and will thus be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still arise. As such, a suspension system is required to minimise the effects of such disturbances.
     \subsection{Speed Wobble}
-        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly impinge on the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
+        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
-        One option is to buy existing truck suspension systems, which would include the benefits of being pre-tested for similar operating requirements and freeing up development time for other areas. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
+        One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements and freeing up development time. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
 \section{Wheels}
     \subsection{Overview}
-        Many factors affect the choice of wheels – rolling resistance is affected by the materials of the wheels and bearings, with the ability to transfer power dependent on the radii and material of the driven wheels.
+        Many factors affect the choice of wheels – rolling resistance is affected by the wheel and bearings material, with the torque transferred dependent on the radii and material of the driven wheels.
     \subsection{Wheel Materials}
-        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range of 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
+        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
-        Longboard bearings come in three different material families: steel, titanium and ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride also exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. As such ceramic may be inadvisable as the board will be used in an environment where it is likely to suffer various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 mark for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal of the three, as it will require less maintenance. 
+        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal type, less maintenance will be required. 
     \subsection{Wheel Dimensions}
-        Longboard wheels typically vary in diameter between 60-100mm with a contact patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing greater torque conversions. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
+        Longboard wheels typically vary in diameter between 60-100mm with a contact-patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing greater torque conversions. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
     \subsection{Estimates of Rolling Resistance}
     
     \begin{equation*}
@@ -246,9 +246,8 @@
     		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads}.
             
     	\subsubsection{Status Meters}
-    		The user needs to be able to understand what the remaining range of the board is, so that they will not undertake a journey when there is insufficient charge.
-    	    The current market leader uses an array of LEDs on its controller for status information.
-    		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
+    		The user needs to be able to understand the remaining range of the board, so that they know the remaining time available.
+    		The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
     		
     	\begin{figure}[H]
             \centering
