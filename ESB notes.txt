@@ -1,0 +1,5 @@
+mass vs deflection graph
+30 60 9.5
+determine FOS
+
+Elastic modulus 1870
