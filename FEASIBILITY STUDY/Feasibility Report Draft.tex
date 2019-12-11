@@ -17,7 +17,7 @@
         The scope of this project consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided was a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards [reference]. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
+        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’  [reference]. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
     \subsection{Component Arrangements}
         Several arrangement options for the electrical components were explored, as shown in the figures below, with limiting factors consisting of:
         \begin{itemize}
@@ -95,7 +95,7 @@
             }
             \label{fig:stressBottom}
         \end{figure}
-        Comparing this to the yield strength of maple wood, approximately 65.5MPa, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm, shown in figure 8 below. 
+        Comparing this to the yield strength of maple wood, approximately 65.5MPa, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm (shown below). 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.15}{\includegraphics{"./Board/Displacement".png}}
@@ -214,14 +214,14 @@
     \subsection{Speed Wobble}
         This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
-        One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements and freeing up development time. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
+        One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements and freeing up development time. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
 \section{Wheels}
     \subsection{Overview}
-        Many factors affect the choice of wheels – rolling resistance is affected by the wheel and bearings material, with the torque transferred dependent on the radii and material of the driven wheels.
+        Many factors affect the choice of wheels – rolling resistance is affected by the wheel and bearing materials, with the torque transferred dependent on the radii and material of the driven wheels.
     \subsection{Wheel Materials}
         Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
-        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 $kg/mm^{2}$, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal type, less maintenance will be required. 
+        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 $kg/mm^{2}$, approximately 640\% greater than AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal type, less maintenance will be required. 
     \subsection{Wheel Dimensions}
         Longboard wheels typically vary in diameter between 60-100mm with a contact-patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing greater torque conversions. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
     \subsection{Estimates of Rolling Resistance}
@@ -238,8 +238,8 @@
     \\*F_{res-rubber} \approx 0.37N	
     \\*F_{res-polyurethane} \approx 1.95N
     \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N$
+    \\*\cite{Combined_Resistance}
     
-    XXX[reference paper used]XXX
     
 \section{Control}
     \subsection{Overview}
@@ -303,5 +303,8 @@
 \section{Conclusion}
 From our research, a number of design conclusions have been drawn: a chain-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due to their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
 \section{References}
-
+\begin{thebibliography}{}
+    \bibitem{Combined_Resistance}
+    M. Sönmez, "A Study on the Combined Effect of Axle Friction and Rolling Resistance", International Journal of Mechanical Engineering Education, vol. 31, no. 2, pp. 101-107, 2003. Available: 10.7227/ijmee.31.2.2.
+\end{thebibliography}
 \end{document}
