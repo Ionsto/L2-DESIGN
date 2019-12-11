@@ -11,10 +11,10 @@
         This project consists of the design and construction of an electric skateboard, based on a traditional longboard.
     
 \section{Introduction}
-        The scope of this project consists of designing and implementing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. Various areas of design had to be considered to ensure technical and financial viability, described within this report.
+        The scope of this project consists of designing and implementing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, allowing the locations and values of max shear stress to be determined. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
+        The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a During the Christmas break, we will be conducting general house Periodic Inspections and carrying out repairs which may be needed. Please ensure your house is clean and tidy before you leave.  FEA to be performed, allowing the locations and values of max shear stress to be determined. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
     \subsection{Component Arrangements}
         Several arrangement options for the electrical components were explored, as shown in the figures below, with limiting factors consisting of:
         \begin{itemize}
@@ -25,25 +25,25 @@
             \end{itemize}
         \begin{figure}[H]
                 \centering
-                \scalebox{0.25}{\includegraphics{FEASIBILITY STUDY/Board/Concept_A.png}}
+                \scalebox{0.25}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_A".png}}
                 \caption{Concept A
                 \\*Deck clear
                 \\*Motor close to driven wheel - efficient power transfer
-                \\*Reduced ground clearance of deck}
+                \\*Reduced ground clearance}
                 \label{fig:ConceptA}
             \end{figure} 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Concept_B.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_B".png}}
                 \caption{Concept B
-                \\*Provides maximum ground clearance and reduces power train losses as components close to driven wheel
+                \\*Provides maximum ground clearance, reduces power train losses as components close to driven wheel
                 \\*Board unbalanced(tail-heavy)
                 \\*Position of components detrimental to user comfort}
                 \label{fig:ConceptB}
             \end{figure}  
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Concept_C.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_C".png}}
                 \caption{Concept C
                 \\*Maximum ground clearance
                 \\*Components directly over front truck - no moment about front truck
@@ -54,39 +54,39 @@
             \end{figure} 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Concept_D.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_D".png}}
                 \caption{Concept D
                 \\*Well-balanced
                 \\*Motor close to driven wheel - efficient power transmission
                 \\*Increased rider comfort - deck clear
                 \\*Battery and motor separated - extensive cabling required
                 \\*Separate casings required}
-                \label{fig:ConceptD}
+                \label{Fig:ConceptD}
             \end{figure} 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Concept_E.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_E".png}}
                 \caption{Concept E
                 \\*Deck clear
                 \\*Well-balanced as components aligned with centroid of board
                 \\*Battery and motor can be integrated into single casing
                 \\*Poor ground clearance
                 }
-                \label{fig:ConceptE}
+                \label{Fig:ConceptE}
             \end{figure}
         Eventually it was decided that the arrangement shown in concept A provided the optimal compromise between the four factors.
     \subsection{Structural Analysis}
         The rider's load was assumed to total 1100N, distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase on a similar square area to model the weight of the electrical components.The simulation (utilising the Finite Element Method) computed the maximum Von Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown below in figures 6 and 7 below.
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Stress_Analysis_Top.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Top".png}}
                 \caption{FEM Von Mises Stress Analysis of Top Surface of the Board
                 }
                 \label{fig:stressTop}
             \end{figure}
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Stress_Analysis_Bottom.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Stress_Analysis_Bottom".png}}
                 \caption{FEM Von Mises Stress Analysis of Bottom Surface of the Board
                 }
                 \label{fig:stressBottom}
@@ -94,7 +94,7 @@
         Comparing this to the yield strength of maple wood, determined as approximately 65.5MPa, a simple ratio was calculated to give a predicted Factor of Safety(hereinafter noted as FOS) value of approximately 2.07. A further simulation was performed with the rider's load scaled up by this FOS, and the load centred at a single 10cmx10cm area at the centre of the wheelbase. Max displacement was calculated to be approximately 18.19mm, as shown in figure 8 below. 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.15}{\includegraphics{FEASIBILITY STUDY/Board/Displacement.png}}
+                \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Displacement".png}}
                 \caption{Displacement Contour of Board When Put Under Maximum Loading
                 }
                 \label{fig:Displacement}
@@ -188,16 +188,16 @@
     \subsection{Operating Terrain}
         The board will be operating in an urban environment and will thus be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still arise. As such, a suspension system is required to minimise the effects of the disturbances on the operation of the board.
     \subsection{Speed Wobble}
-        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running over uneven surfaces at high speed – if neglected, these oscillations could directly impinge on the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
+        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly impinge on the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
         One option is to buy existing truck suspension systems, which would include the benefits of being pre-tested for similar operating requirements and freeing up development time for other areas. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
 \section{Wheels}
     \subsection{Overview}
         Many factors affect the choice of wheels – rolling resistance is affected by the materials of the wheels and bearings, with the ability to transfer power dependent on the radii and material of the driven wheels.
     \subsection{Wheel Materials}
-        Commercial longboard wheels are typically made from polyurethane - this material achieves a $\mu$-rolling in the range of 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the amount of torque than can be transferred from the motor to road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, allowing for an increase in torque transmitted of 75-125\%.
+        Longboard wheels are typically made from polyurethane - this material achieves a $\mu$-rolling in the range of 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the amount of torque than can be transferred from the motor to road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, allowing for an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
-        Bearing materials for longboard wheels come in three different material families: steel, titanium and ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and AS   TM-7 Titanium . This would suggest much less energy lost from elastic deformation. However, Silicon Nitride also exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. As such ceramic may be inadvisable as the board will be used in an environment not dedicated to skateboarding and is likely to suffer various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 mark for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal of the three, increasing savings in the long-run by requiring less maintenance. 
+        Bearing materials for longboard wheels come in three different material families: steel, titanium and ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and AS   TM-7 Titanium . This would suggest much less energy lost from elastic deformation. However, Silicon Nitride also exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. As such ceramic may be inadvisable as the board will be used in an environment where it is likely to suffer various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 mark for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal of the three, as it will require less maintenance. 
     \subsection{Wheel Dimensions}
         Longboard wheels typically vary in diameter between 60-100mm with a contact patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing as greater torque conversion. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
     \subsection{Estimates of Rolling Resistance}
@@ -225,15 +225,43 @@
     	This is due to the ease of altering functionality, and the high volume of support documentation for these units.
     	Due to time and budget constraints, it would also be more effective to search for existing circuit modules than trying to design and build bespoke layouts.
     \subsection{User Interface}
+        \begin{figure}[H]
+            \centering
+            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Control/Boosted Remote Labelled".png}}
+            \caption{Market Leader's Remote Control}
+            \label{fig:Boosted Remote}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \scalebox{0.2}{\includegraphics{"FEASIBILITY STUDY/Control/Pressure Pads
+            Labelled".png}}
+            \caption{Dual Pressure Pad Control}
+            \label{fig:Pressure Pads}
+        \end{figure}
+            
     	\subsubsection{Throttle Control}
     		The user needs to be able to control the speed of the board intuitively and quickly, to ensure safe riding.
-    		The market leader utilises wireless controller (as shown Fig XXX)allowing for braking, accelerating and reverse, with fine step-wise control for each by a roller potentiometer.
+    		The market leader utilises wireless controller (as shown Fig \ref{fig:Boosted Remote}) allowing for braking, accelerating and reverse, with fine step-wise control for each by a roller potentiometer.
     		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
-    		A potential solution to this is a dual pressure pad system, pictured XXX.
+    		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads}.
+    		
+    	\begin{figure}[H]
+            \centering
+            \scalebox{0.4}{\includegraphics{"FEASIBILITY STUDY/Control/7 Segment Labelled".png}}
+            \caption{7 Segment Displays}
+            \label{fig:7 seg}
+        \end{figure}
+    	\begin{figure}[H]
+            \centering
+            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Control/LCD Labelled".png}}
+            \caption{Aduino LCD}
+            \label{fig:LCD}
+        \end{figure}
+            
     	\subsubsection{Status Meters}
     		The user needs to be able to understand what the remaining range of the board is, so that they will not undertake a journey when there is insufficient charge.
-    	The current market leader uses an array of LEDs on its controller for status information.
-    		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider.
+    	    The current market leader uses an array of LEDs on its controller for status information.
+    		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
     \subsection{Battery Management}
     	\subsubsection{Charging/Discharging}
     	Care must be taken to ensure that in normal operation the battery is not charged or discharged outside of safe conditions.
@@ -253,7 +281,7 @@
     	%\subsection{Feedback}
     		%text goes here
 \section{Conclusion}
-From our research, a number of design conclusions have been drawn: the requirements of the various components have been established and the types of component narrowed down to a number of feasible options. Further decisions will be made further on in the design process based on this research, eventually settling on a final design.
+From our research, a number of design conclusions have been drawn: a chain-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
 \section{References}
 
 \end{document}
