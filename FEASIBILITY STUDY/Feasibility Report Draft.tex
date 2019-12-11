@@ -28,7 +28,7 @@
                 \centering
                 \scalebox{0.25}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_A".png}}
                 \caption{Concept A
-                \\*Deck clear
+                \\*Deck clearance
                 \\*Motor close to driven wheel - efficient power transfer
                 \\*Reduced ground clearance}
                 \label{fig:ConceptA}
@@ -68,7 +68,7 @@
                 \centering
                 \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Board/Concept_E".png}}
                 \caption{Concept E
-                \\*Deck clear
+                \\*Deck clearance
                 \\*Well-balanced as components aligned with centroid of board
                 \\*Battery and motor can be integrated into single casing
                 \\*Poor ground clearance
@@ -144,9 +144,9 @@
             F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}
             \\F_{Acceleration} = Weight \times Gravity
             \\F_{Gravity} = Weight \times sin(Slope  Angle)
-            \\F_{Rolling Resistance} = XXX value in wheels part
+            \\F_{Rolling Resistance} = 4.64N
             \\Torque = F \times R_{Wheels}
-            \\Wheel RPM = 
+            \\Wheel RPM = \frac{V}{R}\times \frac{60}{2\pi}
         \end{gather*}
 
         \subsubsection{AC Motor}
@@ -195,7 +195,7 @@
             \end{figure}
             Lithium-ion batteries have a life cycle of approx. 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approx. 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD.
         \subsubsection{Rate of Charge}
-            As the rate of charge is a nonlinear function wrt. the charge level of the battery, the rate of recharge is specified from a DoD - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life.
+            As the rate of charge is a nonlinear function wrt. the charge level, the charge rate is specified from a certain DoD - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life.
         \subsubsection{Battery Size}
         Battery volume and weight are limiting factors wrt. capacity. Volume affects how the components can be arranged on the board, while weight directly impacts the board's performance.    
             \begin{figure}[H]
@@ -206,9 +206,9 @@
             \end{figure}
 \section{Trucks}
     \subsection{Operating Terrain}
-        The board will be operating in an urban environment and will be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will be present. As such, a suspension system is required to minimise the effects of such disturbances.
+        The board will be operating in an urban environment and will be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will be present. As such, a suspension system is required to minimise such disturbances.
     \subsection{Speed Wobble}
-        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing user comfort and potentially resulting in injury. 
+        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
         One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements and freeing up development time. However, many of these are not the required dimensions, and lack important information and data sheets. Alternatively, numerical analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
 \section{Wheels}
@@ -217,16 +217,25 @@
     \subsection{Wheel Materials}
         Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
-        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal type, less maintenance will be required. 
+        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 $kg/mm^{2}$, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal type, less maintenance will be required. 
     \subsection{Wheel Dimensions}
         Longboard wheels typically vary in diameter between 60-100mm with a contact-patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing greater torque conversions. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
     \subsection{Estimates of Rolling Resistance}
-        \begin{figure}[H]
-            \centering
-            \scalebox{0.4}{\includegraphics{"FEASIBILITY STUDY/Wheels/Calculations_Diagram".png}}
-            \caption{}
-            \label{fig:Rolling Resistance Diagram}
-        \end{figure}
+        \begin{equation*}
+        \resizebox{\columnwidth}{!}{%
+            $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  r_f cos(\alpha)(\frac{F_{load}}{r_o – r_i})$%
+        }
+    \end{equation*}
+    {
+    \\*Static
+    \\*F_{res-rubber} \approx 10.98N	
+    \\*F_{res-polyurethane} \approx 4.88N
+    \\*F_{res-total-static} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 31.72N 
+    \\*Dynamic
+    \\*F_{res-rubber} \approx 0.37N	
+    \\*F_{res-polyurethane} \approx 1.95N
+    \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N}
+
     
     XXX[reference paper used]XXX
     
@@ -234,7 +243,7 @@
     \subsection{Overview}
     	Any complex electronic system will almost always require a control unit to operate it.
     	There are three aspects of control that must be designed for; the user interface to control the skateboard, battery management, and motor/drive train control.
-    	For this application, and the one-off nature of the product, it would be most effective to use a micro-controller system on a chip for control, rather than a bespoke hardware solution.
+    	For this application, and the one-off nature of the product, it is most effective to use a micro-controller system on a chip for control, rather than bespoke hardware.
     	This is due to the ease of altering functionality, and the high volume of support documentation for these units.
     	Due to time and budget constraints, it would also be more effective to search for existing circuit modules than trying to design and build bespoke layouts.
     \subsection{User Interface}
@@ -254,13 +263,12 @@
             
     	\subsubsection{Throttle Control}
     		The user needs to be able to control the speed of the board intuitively and quickly, to ensure safe riding.
-    		The market leader utilises wireless controller (as shown Fig \ref{fig:Boosted Remote}) allowing for braking, accelerating and reverse, with fine step-wise control for each by a roller potentiometer.
+    		The market leader utilises a wireless controller (as shown Fig \ref{fig:Boosted Remote}) allowing for braking, accelerating and reversing, with fine step-wise control for each by a roller potentiometer.
     		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
     		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads}.
             
     	\subsubsection{Status Meters}
-    		The user needs to be able to understand the remaining range of the board, so that they know the remaining time available.
-    		The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
+    		The user needs to be able to understand the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
     		
     	\begin{figure}[H]
             \centering
@@ -275,8 +283,8 @@
             \label{fig:LCD}
         \end{figure}
     \subsection{Battery Management}
-    	Care must be taken to ensure that in normal operation the battery is not charged or discharged outside of safe conditions.
-    	This includes tracking the number of cycles the battery has gone through, as well as temperature, with a view to stop the rider from using the system if the battery is no longer in a safe state.
+    	Care must be taken to ensure that in normal operation the battery is charged safely.
+    	This includes tracking the number of cycles the battery has gone through, as well as the temperature, with a view to stopping the rider using the system if the battery is no longer in a safe state.
     	
     		%General guidelines suggest charging at no faster than 1C for optimal battery lifetime, meaning a 1300maH battery is charged at 1.3A for a duration of 1 hour.
     		%Discharge ratings vary depending on the battery, a typical hobby grade battery used for multi-rotors and helicopters boast a continuous draw of 40-50C, with a 10s burst of 90-120C, much higher than the charging rating.
@@ -285,13 +293,13 @@
     		%If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
     \subsection{Motor Control}
     		Since a DC Brushless motor is being used, a more complex control method is required than a brushed DC motor.
-    		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and are widely available in a range of specifications due to their use in the remote control model industry.
+    		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and is widely available in a range of specifications due to its use in the remote control models.
     		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller, signals that can be generated simply with a microcontroller.
     		This circuit could be designed and produced by hand, however due to the complexity, and the competitive pricing of the currently available products, it may prove a more effective choice to purchase an existing ESC.
     	%\subsection{Feedback}
     		%text goes here
 \section{Conclusion}
-From our research, a number of design conclusions have been drawn: a chain-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
+From our research, a number of design conclusions have been drawn: a chain-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due to their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
 \section{References}
 
 \end{document}
