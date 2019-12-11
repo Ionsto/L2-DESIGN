@@ -3,6 +3,7 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{comment}
+\usepackage{caption}
 \title{ \begin{huge}
 \textbf{L2 Design Feasibility Report: Electric Skateboard} 
 \end{huge} }
@@ -27,7 +28,8 @@
         \begin{figure}[H]
                 \centering
                 \scalebox{0.25}{\includegraphics{"./Board/Concept_A".png}}
-                \caption{Concept A
+                \caption{
+                Concept A
                 \\*Deck clearance
                 \\*Motor close to driven wheel - efficient power transfer
                 \\*Reduced ground clearance}
@@ -133,7 +135,7 @@
             However as they have no gearing and are limited in terms of the space of the wheels, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
     \subsection{Motor}
         \subsubsection{Required Parameters}
-        \The main requirements of the motor at 8$ms^{-1}$, with a slope of 10$^{\circ}$ and 1$ms^{-2}$ acceleration are
+        The main requirements of the motor at 8$ms^{-1}$, with a slope of 10$^{\circ}$ and 1$ms^{-2}$ acceleration are
         \begin{itemize}
         	\item Size- The motor must fit under the board as well as being relatively lightweight
         	\item Torque- 13Nm at the wheel 
