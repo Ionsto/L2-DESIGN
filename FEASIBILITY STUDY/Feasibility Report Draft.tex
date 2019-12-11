@@ -3,7 +3,9 @@
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{comment}
+\usepackage{setspace}
 \usepackage{caption}
+\doublespacing
 \title{ 
 \begin{huge}
 \textbf{L2 Design Feasibility Report: Electric Skateboard} 
@@ -17,7 +19,7 @@
         This project's scope consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’  [reference]. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a FEA to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is shown to be the main ingredient used for construction. Figure 1 below shows a rendering of the final concept. 
+        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’\cite{boardModel}. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks \cite{trucksCAD} - this allowed a FEA to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is shown to be the main ingredient used for construction. Figure 1 below shows a rendering of the final concept \cite{shoesCAD}. 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.25}{\includegraphics{"./Board/Skateboard_Rendering".png}}
@@ -102,7 +104,7 @@
             }
             \label{fig:stressBottom}
         \end{figure}
-        Comparing this to the yield strength of maple wood, approximately 65.5MPa [reference], a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm (shown below). 
+        Comparing this to the yield strength of maple wood, approximately 65.5MPa \cite{materialProperties}, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm (shown below). 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.15}{\includegraphics{"./Board/Displacement".png}}
@@ -114,18 +116,18 @@
     
 \section{Powertrain}
     \subsection{Transmission}
-        \subsubsection{Belt}
-            Due to the elasticity of rubber belts, this option provides low noise and vibration, and allows for efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan. 
         \subsubsection{Gearing}
             Gears provide a vast array of gear ratios but the large range of output speeds of motors makes large gear ratios unnecessary.
-        \subsubsection{Chain}
-            Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. [REFERENCE P80 mechanical power efficiency] However, high maintenance is required due to the need for lubrication to prevent wear and corrosion. 
         \begin{figure}[H]
             \centering
             \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain1Lab".png}}
             \caption{Arrangement with gears}
-            \label{fig:Drivetrain1}
+            \label{fig:DrivetrainChain}
         \end{figure}
+        \subsubsection{Chain}
+            Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. \cite{Mechanical_Power_Transmission} However, high maintenance is required due to the need for lubrication to prevent wear and corrosion. 
+        \subsubsection{Belt}
+            Due to the elasticity of toothed rubber belts, this option provides low noise and vibration, and allows for efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan. So this is the preferred option.
         \begin{figure}[H]
             \centering
             \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain2Lab".png}}
@@ -187,7 +189,7 @@
                 \caption{Gradient of Route}
                 \label{fig:gradient}
             \end{figure}
-            The total elevation change consists of 50m uphill and 25m down (heading towards Josephine Butler). The energy required can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly efficient system.
+            The total elevation change consists of 50m uphill and 25m down (heading towards Josephine Butler). The energy required can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly flat route.
         \subsubsection{Power Requirement Estimates}
             10Wh/mile (based off electric bike: 12Wh/mile)
             Total Power of Journey (including vertical): 37Wh
@@ -205,7 +207,7 @@
             \end{figure}
             Lithium-ion batteries have a life cycle of approx. 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approx. 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD.
         \subsubsection{Rate of Charge}
-            As the rate of charge is a nonlinear function wrt. the charge level, the charge rate is specified from a certain DoD - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life.
+            As the rate of charge is a nonlinear function wrt. the charge level, the charge rate is specified from a certain DoD - general guidelines suggest that the charge rate should not exceed 1C to ensure optimal battery life. Ideally, the battery will charge from 50\% empty to full overnight. This will be achievable at a sub 1C rate [pushing 370 Watts for 1 hour].
         \subsubsection{Battery Size}
         Battery volume and weight are limiting factors wrt. capacity. Volume affects how the components can be arranged on the board, while weight directly impacts the board's performance.    
             \begin{figure}[H]
@@ -307,12 +309,8 @@
     	%\subsection{Feedback}
     		%text goes here
 \section{Conclusion}
-From our research, a number of design conclusions have been drawn: a chain-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due to their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
+From our research, a number of design conclusions have been drawn: a belt-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due to their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
 \section{References}
-
-\cite{IEEEexample}
-\cite{IEEEexample:standardproposed}
-
 
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,bibliography.bib}
