@@ -11,7 +11,7 @@
         This project consists of the design and construction of an electric skateboard, based on a traditional longboard.
     
 \section{Introduction}
-        The scope of this project consists of designing and implementing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. 
+        The scope of this project consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. We were supplied with a longboard (detailed further below), which would be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
         The board provided is a 'Raider I model (34’’ x 8’’)’ by Mindless Longboards. The deck was modelled as a CAD component in SOLIDWORKS and assembled with a downloaded model of the trucks [reference] - this allowed a During the Christmas break, we will be conducting general house Periodic Inspections and carrying out repairs which may be needed. Please ensure your house is clean and tidy before you leave.  FEA to be performed, allowing the locations and values of max shear stress to be determined. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is a common type of hardwood that is used for skateboard decks [reference].
@@ -195,11 +195,11 @@
     \subsection{Overview}
         Many factors affect the choice of wheels – rolling resistance is affected by the materials of the wheels and bearings, with the ability to transfer power dependent on the radii and material of the driven wheels.
     \subsection{Wheel Materials}
-        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range of 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the amount of torque than can be transferred from the motor to road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
+        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range of 0.04-0.08. While this is sufficiently small to provide low rolling resistance, polyurethane also only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
-        Bearing materials for longboard wheels come in three different material families: steel, titanium and ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and AS   TM-7 Titanium . This would suggest much less energy lost from elastic deformation. However, Silicon Nitride also exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. As such ceramic may be inadvisable as the board will be used in an environment where it is likely to suffer various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 mark for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal of the three, as it will require less maintenance. 
+        Longboard bearings come in three different material families: steel, titanium and ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479 kg/mm2, an increase of approx. 640\% over that of AISI-52100 steel and ASTM-7 Titanium, leading to reduced energy loss from elastic deformation. However, Silicon Nitride also exhibits a yield strength of 170MPa: approx. 64\% less than steel and titanium. As such ceramic may be inadvisable as the board will be used in an environment where it is likely to suffer various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 mark for steel and titanium respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion resistance may suggest that it is the optimal of the three, as it will require less maintenance. 
     \subsection{Wheel Dimensions}
-        Longboard wheels typically vary in diameter between 60-100mm with a contact patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing as greater torque conversion. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
+        Longboard wheels typically vary in diameter between 60-100mm with a contact patch width of approx. 30mm – larger wheel radii provide greater top speed and smoother ride, with smaller radii producing greater torque conversions. Depending on the output of the motor and the required road-torque, the appropriate wheel size can be selected.
     \subsection{Estimates of Rolling Resistance}
     
     \begin{equation*}
@@ -227,7 +227,7 @@
     \subsection{User Interface}
         \begin{figure}[H]
             \centering
-            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Control/Boosted Remote Labelled".png}}
+            \scalebox{0.2}{\includegraphics{"FEASIBILITY STUDY/Control/Boosted Remote Labelled".png}}
             \caption{Market Leader's Remote Control}
             \label{fig:Boosted Remote}
         \end{figure}
@@ -244,6 +244,11 @@
     		The market leader utilises wireless controller (as shown Fig \ref{fig:Boosted Remote}) allowing for braking, accelerating and reverse, with fine step-wise control for each by a roller potentiometer.
     		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
     		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads}.
+            
+    	\subsubsection{Status Meters}
+    		The user needs to be able to understand what the remaining range of the board is, so that they will not undertake a journey when there is insufficient charge.
+    	    The current market leader uses an array of LEDs on its controller for status information.
+    		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
     		
     	\begin{figure}[H]
             \centering
@@ -253,17 +258,11 @@
         \end{figure}
     	\begin{figure}[H]
             \centering
-            \scalebox{0.15}{\includegraphics{"FEASIBILITY STUDY/Control/LCD Labelled".png}}
-            \caption{Aduino LCD}
+            \scalebox{0.4}{\includegraphics{"FEASIBILITY STUDY/Control/LCD Labelled".jpg}}
+            \caption{Arduino LCD}
             \label{fig:LCD}
         \end{figure}
-            
-    	\subsubsection{Status Meters}
-    		The user needs to be able to understand what the remaining range of the board is, so that they will not undertake a journey when there is insufficient charge.
-    	    The current market leader uses an array of LEDs on its controller for status information.
-    		This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
     \subsection{Battery Management}
-    	\subsubsection{Charging/Discharging}
     	Care must be taken to ensure that in normal operation the battery is not charged or discharged outside of safe conditions.
     	This includes tracking the number of cycles the battery has gone through, as well as temperature, with a view to stop the rider from using the system if the battery is no longer in a safe state.
     	
@@ -273,7 +272,6 @@
     		%This includes preventing charging when the battery has reached the end of its operational lifetime.
     		%If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
     \subsection{Motor Control}
-    	\subsubsection{Motor control}
     		Since a DC Brushless motor is being used, a more complex control method is required than a brushed DC motor.
     		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and are widely available in a range of specifications due to their use in the remote control model industry.
     		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller, signals that can be generated simply with a microcontroller.
