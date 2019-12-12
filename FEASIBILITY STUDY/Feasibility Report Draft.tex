@@ -5,6 +5,8 @@
 \usepackage{comment}
 \usepackage{setspace}
 \usepackage{caption}
+\usepackage{hyperref}
+\usepackage[T1]{fontenc}
 \doublespacing
 \title{ 
 \begin{huge}
@@ -12,6 +14,8 @@
 \end{huge} }
 \begin{document}
 \maketitle
+\tableofcontents
+\newpage
 \section{Executive Summary}
         This project consists of the design and construction of an electric skateboard based on a traditional longboard.
     
@@ -19,7 +23,7 @@
         This project's scope consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Rd. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified non-invasively to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’\cite{boardModel}. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks \cite{trucksCAD} - this allowed a Finite Element Method (FEM) analysis to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is shown to be the main ingredient used for construction. Figure 1 below shows a rendering of the final concept \cite{shoesCAD}. 
+        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’\cite{boardModel}. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks \cite{trucksCAD} - this allowed a Finite Element Method (FEM) analysis to be performed, to estimate locations and values of the max shear stress. Additionally, the strain and displacement profiles of the board under load were obtained. Material properties were taken for maple wood, as it is shown to be the main ingredient used for construction. Figure 1 shows a rendering of the final concept \cite{shoesCAD}. 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.25}{\includegraphics{"./Board/Skateboard_Rendering".png}}
@@ -275,12 +279,12 @@
             
     	\subsubsection{Throttle Control}
     		The user needs to be able to control the speed of the board intuitively and quickly, to ensure safe riding.
-    		The market leader utilises a wireless controller (as shown Fig \ref{fig:Boosted Remote}) allowing for braking, accelerating and reversing, with fine step-wise control for each by a roller potentiometer.
+    		The market leader utilises a wireless controller (as shown Fig \ref{fig:Boosted Remote} \cite{Boosted Remote}) allowing for braking, accelerating and reversing, with fine step-wise control for each by a roller potentiometer.
     		This only takes effect when a secondary button is held, acting as a dead-mans-switch.
-    		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads}.
+    		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads} \cite{Pressure Pads}.
             
     	\subsubsection{Status Meters}
-    		The user needs to be able to understand the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} and Fig.\ref{fig:LCD}).
+    		The user needs to be able to understand the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} \cite{7 seg} and Fig.\ref{fig:LCD}).
     		
     	\begin{figure}[H]
             \centering
