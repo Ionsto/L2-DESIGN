@@ -134,15 +134,21 @@
         	\item Speed- The $K_{v}$ motor parameter should be 250 eqn
         	\item Power- 2000w assuming no acceleration uphill at 8$ms^{-1}$
         \end{itemize}
-        \begin{gather}
-            F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}\\
-            F_{Acceleration} = Mass \times Acceleration\\
-            F_{Gravity} = Weight \times sin(Slope Angle)\\
-            F_{Rolling Resistance} = 4.64N\\
-            Torque = F_{Total} \times R_{Wheels}\\
-            Wheel RPM = \frac{Velocity (ms^{-1})}{Radius}\times \frac{60}{2\pi}\\ 
-            Motor Power = \frac{F_{Total} \times Velocity (ms^{-1})}{Efficiency}
-        \end{gather}
+        \begin{figure}[H]
+            \centering
+            \scalebox{0.5}{\includegraphics{"./Motor/equations".png}}
+            \label{fig:equaitons}
+        \end{figure}
+        
+        %\begin{gather}
+        %    F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}\\
+        %    F_{Acceleration} = Mass \times Acceleration\\
+        %    F_{Gravity} = Weight \times sin(Slope Angle)\\
+        %    F_{Rolling Resistance} = 4.64N\\
+        %    Torque = F_{Total} \times R_{Wheels}\\
+        %    Wheel RPM = \frac{Velocity (ms^{-1})}{Radius}\times \frac{60}{2\pi}\\ 
+        %    Motor Power = \frac{F_{Total} \times Velocity (ms^{-1})}{Efficiency}
+        %\end{gather}
         \subsubsection{AC Motor}
             AC induction motors have excellent efficiency, reliability and durability. However, using DC supply would require a variable frequency inverter to produce AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue for hills. 
         \subsubsection{DC Brushed Motor}
@@ -194,14 +200,14 @@
             \ref{fig:DoD} illustrates the superior lifespan at comparable discharge depths.
             Lithium-ion batteries have a life cycle of approximately 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approximately 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD for a full use.
         \subsubsection{Rate of Charge}
-            Lithium polymer batteries are charged at a constant rate until they reach near capacity at which they slow down and shut off. Recharge time has to have a lower bound percentage. General guidelines suggest that the charge rate should not exceed 1C [Pushing the total amp hours in one hour] to ensure optimal battery life. Ideally, the battery will charge from 50\% empty to full overnight. This will be achievable at a sub 1C rate [15 amps], which allows it to recharge from consumer wall sockets.
+            Lithium polymer charges at a constant rate until near capacity, at which they slow down exponentially. General guidelines suggest that the charge rate should not exceed 1C [charging the total charge in one hour] to ensure optimal battery life. Ideally, the battery will charge from 50\% to full overnight. This will be achievable at a sub 1C rate [15 amp charger], which allows it to recharge from consumer wall sockets.
         \subsubsection{Battery Size}
         Battery volume and weight are limiting factors wrt. capacity. Volume affects how the components can be arranged on the board, while weight directly impacts the board's performance.    
         Using the calculated capacity the volume and mass can be calculated with the volumetric \& graviometric density. Using values from \ref{fig:Battery Size}, the volume comes to about 1.2 Litres with a mass of 2.3Kg.
             \begin{figure}[H]
                 \centering
                 \scalebox{0.40}{\includegraphics{./Battery/Density.png}}
-                \caption{Ragone Plot \cite{BatteryDensity}}
+                \caption{Battery size and energy density \cite{BatteryDensity}}
                 \label{fig:Battery Size}
             \end{figure}
 \section{Trucks}
@@ -215,19 +221,19 @@
         \begin{figure}[H]
             \centering
             \scalebox{0.2}{\includegraphics{"./Wheels/Spring Idea".png}}
-            \caption{Credits: Seismic Skate}
+            \caption{Credits: Seismic Skate \cite{spring_idea}}
             \label{fig: Spring Idea}
         \end{figure}
         \begin{figure}[H]
             \centering
             \scalebox{0.2}{\includegraphics{"./Wheels/Seperate Spring Idea".png}}
-            \caption{Credit: US Patent 4,176,850 'SKATEBOARD TRUCK WITH INDEPENDENT WHEEL SUSPENSION'}
+            \caption{Credit: US Patent 4,176,850 'SKATEBOARD TRUCK WITH INDEPENDENT WHEEL SUSPENSION' \cite{separate_spring}}
             \label{fig: Seperate Spring Idea}
         \end{figure}
         \begin{figure}[H]
             \centering
             \scalebox{0.35}{\includegraphics{"./Wheels/Hanger Idea".png}}
-            \caption{Credit: Avenue Trucks}
+            \caption{Credit: Avenue Trucks \cite{hanger}}
             \label{fig: Hanger Idea}
         \end{figure}
 \section{Wheels}
@@ -247,23 +253,21 @@
             $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  r_f cos(\alpha)(\frac{F_{load}}{r_o – r_i})$%
         }
         \end{equation*}
-    $Static
-    \\*F_{res-rubber} \approx 10.98N	
+    Static
+    $F_{res-rubber} \approx 10.98N	
     \\*F_{res-polyurethane} \approx 4.88N
-    \\*F_{res-total-static} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 31.72N 
+    \\*F_{res-total-static} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 31.72N $
     \\*Dynamic
-    \\*F_{res-rubber} \approx 0.37N	
+    \\*$F_{res-rubber} \approx 0.37N	
     \\*F_{res-polyurethane} \approx 1.95N
     \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N$
     \\*\cite{Combined_Resistance} 
     
 \section{Control}
     \subsection{Overview}
-    	Complex electronic systems will almost always require a control unit to operate them.
+    	Complex electronic systems require control units for operation.
     	Three aspects of control must be designed for; the user interface, battery management, and motor/drive train control.
-    	In this application, the one-off nature of the product lends itself to use a micro-controller for control, rather than bespoke hardware.
-    	This is due to the ease of altering functionality, and the high volume of support documentation for these units.
-    	Due to time and budget constraints, it may prove more effective to use existing circuit modules than implementing a bespoke design.
+    	In this application, the one-off nature of the product lends itself to use a micro-controller for control, rather than bespoke hardware. Microcontrollers can alter their functionality with speed and ease, due to the volume of support documentation available. Due to time and budget constraints, it may prove more effective to use existing circuit modules such as these than implementing a bespoke design.
     \subsection{User Interface}
         \begin{figure}[H]
             \centering
