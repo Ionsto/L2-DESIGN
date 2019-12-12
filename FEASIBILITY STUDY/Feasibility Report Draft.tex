@@ -127,28 +127,28 @@
         
     \subsection{Motor}
         \subsubsection{Required Parameters}
-        The main requirements of the motor at 8$ms^{-1}$, with a slope of 10$^{\circ}$ and 1$ms^{-2}$ acceleration are:
+        The main requirements of the motor at 8$ms^{-1}$, with a slope of 10$^{\circ}$ and 1$ms^{-2}$ acceleration using equations bellow are:
         \begin{itemize}
         	\item Size- The motor must fit under the board and be relatively lightweight
         	\item Torque- 13Nm at the wheel 
-        	\item Speed- The $K_{v}$ motor parameter should be 250
-        	\item Power- 2000w assuming no acceleration uphill and 8$ms^{-1}$
+        	\item Speed- The $K_{v}$ motor parameter should be 250 eqn
+        	\item Power- 2000w assuming no acceleration uphill at 8$ms^{-1}$
         \end{itemize}
-        \begin{gather*}
+        \begin{gather}
             F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}\\
             F_{Acceleration} = Mass \times Acceleration\\
             F_{Gravity} = Weight \times sin(Slope Angle)\\
             F_{Rolling Resistance} = 4.64N\\
             Torque = F_{Total} \times R_{Wheels}\\
-            Wheel RPM = \frac{Velocity (ms^{-1})}{Radius}\times \frac{60}{2\pi}\\
+            Wheel RPM = \frac{Velocity (ms^{-1})}{Radius}\times \frac{60}{2\pi}\\ 
             Motor Power = \frac{F_{Total} \times Velocity (ms^{-1})}{Efficiency}
-        \end{gather*}
+        \end{gather}
         \subsubsection{AC Motor}
-            The AC induction motor has excellent efficiency, reliability and durability. However, using DC supply would require a variable frequency inverter to produce AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue for hills. 
+            AC induction motors have excellent efficiency, reliability and durability. However, using DC supply would require a variable frequency inverter to produce AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue for hills. 
         \subsubsection{DC Brushed Motor}
             Using a commutator allows a motor to be run from a DC supply but using carbon brushes adds a large amount of friction and varying the speed of this type of motor is harder, especially if two motors were implemented and run synchronously.
         \subsubsection{DC Brushless Motor}
-            With an electronic speed controller a motor can be run from a DC supply with speed control and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque, enabling the board to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
+            With an electronic speed controller a motor can be run from a DC supply with speed control and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque, enabling the board to accelerate quickly at low speeds \cite{AC_Motor}. For these reasons it was decided a DC brushless motor would be used.
     \section{Battery}
     We need a small, light and quickly rechargeable battery that can power the whole system. We picked a voltage of 24V as voltage for the total supply rail as it is common for consumer electronics and doesn't require high voltage safety precautions. Battery charge capacity (amp-hours) and energy capacity are used roughly interchangeably due to the constant supply voltage for ease of calculation but will be annotated with the units strictly.
         \subsubsection{Capacity}
@@ -213,7 +213,7 @@
         This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
         One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements, freeing up development time. It may however be difficult to obtain suspension systems of the correct dimensions off-the-shelf, since very few are currently available on the market. Alternatively, analysis of the requirements could lead to a bespoke solution, which would be more advantageous than an off the shelf solution.
-        There are many patented designs in existence, as shown in figures XXX. These are not without their drawbacks though, so designing and manufacturing our own in a similar style to figure 3 is the ideal solution, providing a detailed cost analysis proves it more beneficial than to buy them.
+        There are many patented designs in existence, as shown in figures \ref{fig: Spring Idea}, \ref{fig: Seperate Spring Idea} and \ref{fig: Hanger Idea}. These are not without their drawbacks though, so designing and manufacturing our own in a similar style to figure 18 is the ideal solution, providing a detailed cost analysis proves it more beneficial than to buy them.
         \begin{figure}[H]
             \centering
             \scalebox{0.2}{\includegraphics{"./Wheels/Spring Idea".png}}
@@ -222,9 +222,15 @@
         \end{figure}
         \begin{figure}[H]
             \centering
-            \scalebox{0.2}{\includegraphics{"./Wheels/Separate Spring Idea".png}}
+            \scalebox{0.2}{\includegraphics{"./Wheels/Seperate Spring Idea".png}}
             \caption{}
-            \label{fig: Spring Idea}
+            \label{fig: Seperate Spring Idea}
+        \end{figure}
+        \begin{figure}[H]
+            \centering
+            \scalebox{0.2}{\includegraphics{"./Wheels/Hanger Idea".png}}
+            \caption{}
+            \label{fig: Hanger Idea}
         \end{figure}
 \section{Wheels}
     \subsection{Overview}
