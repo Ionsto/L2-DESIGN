@@ -12,18 +12,18 @@
 \begin{huge}
 \textbf{L2 Design Feasibility Report: Electric Skateboard} 
 \end{huge} }
+\author{Toby Ashton, Jacob Black, Hugo McCartney, Haydn Lisk, Edward Street, Sam Sutcliffe}
 \begin{document}
 \maketitle
 \tableofcontents
 \newpage
 \section{Executive Summary}
-        This project consists of the design and construction of an electric skateboard based on a traditional longboard.
-    
+        This project concerns the design and construction of an electric skateboard based on a traditional longboard.
 \section{Introduction}
-        This project's scope consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Road. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified non-invasively to produce the final product. 
+        This project's scope consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Road. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified to produce the final product. 
 \section{Board}
     \subsection{Overview}
-        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’\cite{boardModel}. The deck was modelled in SOLIDWORKS and assembled with a downloaded model of the trucks \cite{trucksCAD} - this allowed a Finite Element Method (FEM) analysis to be performed, to estimate locations and values of the max shear stress. Additionally, the displacement profile of the board under load maximum were obtained. Material properties were taken for maple wood, as it is shown to be the main ingredient used for construction. Fig \ref{fig:Board_Rendering} shows a rendering of the final concept \cite{shoesCAD}. 
+        The board provided was a 'Mindless Raider I model (34’’ x 8’’)’\cite{boardModel}. The deck was modelled in SOLIDWORKS and assembled with a library model of the trucks \cite{trucksCAD} - this allowed a Finite Element Method (FEM) analysis to be performed. Material properties were taken for maple wood, as it is the main board material. Fig \ref{fig:Board_Rendering} shows a rendering of the final concept \cite{shoesCAD}. 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.25}{\includegraphics{"./Board/Skateboard_Rendering".png}}
@@ -69,9 +69,8 @@
                 \caption{Concept E}
                 \label{Fig:ConceptE}
             \end{figure}
-        Eventually it was decided that the arrangement shown in concept A provided the optimal compromise between the four factors.
     \subsection{Structural Analysis}
-        The rider's load was assumed to total 1100N, evenly distributed over two 10cmx10cm square areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown in the figures below.
+        Rider load was assumed to total 1100N, applied over two 10cmx10cm areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown in the figures below.
         \begin{figure}[H]
             \centering
             \scalebox{0.3}{\includegraphics{"./Board/Stress_Analysis_Top".png}}
@@ -86,7 +85,7 @@
             }
             \label{fig:stressBottom}
         \end{figure}
-        Comparing this to the yield strength of maple wood, approximately 65.5MPa \cite{materialProperties}, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. The max displacement was calculated as approximately 18.19mm (shown below). 
+        Comparing this to the yield strength of maple wood, approximately 65.5MPa \cite{materialProperties}, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. Maximum displacement was calculated as approximately 18.19mm (shown below). 
         \begin{figure}[H]
                 \centering
                 \scalebox{0.3}{\includegraphics{"./Board/Displacement".png}}
@@ -94,7 +93,7 @@
                 }
                 \label{fig:Displacement}
             \end{figure}
-        With the unloaded board height of 110mm, this allows a minimum ground clearance of approximately 91.8mm - this was considered to be a suitable value as it allows for electrical components to have a max height of 45.9mm considering a FOS of 2.
+        With the unloaded board height of 110mm, this allows a minimum ground clearance of approximately 91.8mm - this was considered acceptable as the electrical components will have a max height of 45.9mm considering a FOS of 2.
     
 \section{Powertrain}
     \subsection{Transmission}
@@ -106,10 +105,13 @@
             \caption{Arrangement with gears}
             \label{fig:DrivetrainChain}
         \end{figure}
+        \subsubsection{Hub Motor}
+            Hub motors are contained in the wheels of the skateboard, offering many advantages including quietness, low maintenance and sleek appearance.
+            However as they have no gearing and have limited space, they provide less torque than other drives. %\[cooling?, wheel customization, ride- thin polyurethane]
         \subsubsection{Chain}
             Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. \cite{Mechanical_Power_Transmission} However, high maintenance is required due to the need for lubrication to prevent wear and corrosion. 
         \subsubsection{Belt}
-            Due to the elasticity of toothed rubber belts, this option provides low noise and vibration, and allows for efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan. So this is the preferred option.
+            Due to the elasticity of toothed rubber belts, this option provides low noise and vibration, and allows for efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan making this preferable.
         \begin{figure}[H]
             \centering
             \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain2Lab".png}}
@@ -122,9 +124,7 @@
             \caption{Arrangement with Belt attached to trucks}
             \label{fig:Drivetrain3}
         \end{figure}
-        \subsubsection{Hub Motor}
-            Hub motors are entirely contained in the wheels of the skateboard, offering many advantages including quietness, low maintenance and sleek appearance.
-            However as they have no gearing and are limited in terms of space, they provide less torque than a traditional drive. %\[cooling?, wheel customization, ride- thin polyurethane]
+        
     \subsection{Motor}
         \subsubsection{Required Parameters}
         The main requirements of the motor at 8$ms^{-1}$, with a slope of 10$^{\circ}$ and 1$ms^{-2}$ acceleration are:
@@ -144,7 +144,7 @@
             Motor Power = \frac{F_{Total} \times Velocity (ms^{-1})}{Efficiency}
         \end{gather*}
         \subsubsection{AC Motor}
-            The AC induction motor has excellent efficiency, reliability and durability. However, using a DC battery source would require a variable frequency inverter to produce an AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue when going up hills. 
+            The AC induction motor has excellent efficiency, reliability and durability. However, using DC supply would require a variable frequency inverter to produce an AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue when going up hills. 
         \subsubsection{DC Brushed Motor}
             Using a commutator allows a motor to be run from a DC supply but using carbon brushes adds a large amount of friction and varying the speed of this type of motor is harder, especially if two motors were implemented and run synchronously.
         \subsubsection{DC Brushless Motor}
@@ -161,8 +161,8 @@
             \end{figure}
             Extra energy considerations will be needed for the range as there is a relatively large height change throughout the route.
             The elevation and gradient variations can be seen in the graphs below, with data sourced from various GPS public databases via an online website \cite{GPSDatabase}.
-            Fig \ref{fig:route_el} shows the elevation of the route and makes a difference for the maximum capacity needed.
-            Fig \ref{fig:route_grad} shows the gradient of this route, which will effect the maximum torque required.
+            Fig \ref{fig:elevation} shows the elevation of the route and makes a difference for the maximum capacity needed.
+            Fig \ref{fig:gradient} shows the gradient of this route, which will effect the maximum torque required.
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/RouteAnalysis/elevation.png}}
@@ -184,7 +184,10 @@
         %\subsubsection{Charging}
             %Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat associated with large energy transfers.
         \subsubsection{Lifespan}
-            The Lifespan of a battery is determined by the depth of discharge and the family of battery used. It can be seen in Fig. \ref{fig:DoD} how lithium polymer batteries have a longer lifespan at similar discharge depths. Figure made from data from Table 2 of "How to Prolong Lithium-based Batteries" \cite{BatteryLifespan} 
+            The Lifespan of a battery is determined by the depth of discharge and the family of battery used. It can be seen in Fig. \ref{fig:DoD} how lithium polymer batteries have a longer lifespan at similar discharge depths. 
+            %SAM-------> Could this line be condensed to:
+            %Fig.(ref) illustrates the superior lifespan at comparable discharge depths
+            Figure made from data from Table 2 of "How to Prolong Lithium-based Batteries" \cite{BatteryLifespan} 
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/ChargeCycles/DoD.png}}
@@ -196,7 +199,7 @@
             Lithium polymer batteries are charged at a constant rate until they reach near capacity at which they slow down and shut off. Recharge time has to have a lower bound percentage. General guidelines suggest that the charge rate should not exceed 1C [Pushing the total amp hours in one hour] to ensure optimal battery life. Ideally, the battery will charge from 50\% empty to full overnight. This will be achievable at a sub 1C rate [15 amps], which allows it to recharge from consumer wall sockets.
         \subsubsection{Battery Size}
         Battery volume and weight are limiting factors wrt. capacity. Volume affects how the components can be arranged on the board, while weight directly impacts the board's performance.    
-        Using the calculated capacity the volume and mass can be calculated with the volumetric \& graviometric density. Using values from \ref{fig:Battery Size}, the volume comes to about 1.2 Litres and the mass is 2.3Kg.
+        Using the calculated capacity the volume and mass can be calculated with the volumetric \& graviometric density. Using values from \ref{fig:Battery Size}, the volume comes to about 1.2 Litres with a mass of 2.3Kg.
             \begin{figure}[H]
                 \centering
                 \scalebox{0.40}{\includegraphics{./Battery/Density.png}}
@@ -206,10 +209,17 @@
 \section{Trucks}
     \subsection{Operating Terrain}
         The board will be operating in an urban environment and will be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still be present. A suspension system is thus required to minimise these effects.
-    %\subsection{Speed Wobble}
-        %This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
+    \subsection{Speed Wobble}
+        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
-        One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements, freeing up development time. It may however be difficult to obtain suspension systems of the correct dimensions off-the-shelf. Alternatively, analysis of the requirements could allow us to design our own bespoke solution, and then consider its potential advantages compared to existing commercial suspension. 
+        One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements, freeing up development time. It may however be difficult to obtain suspension systems of the correct dimensions off-the-shelf, since very few are currently available on the market. Alternatively, analysis of the requirements could lead to a bespoke solution, which would be more advantageous than an off the shelf solution.
+        There are many patented designs in existence, as shown in figures XXX. These are not without their drawbacks though, so designing and manufacturing our own in a similar style to figure 3 is the ideal solution, providing a detailed cost analysis proves it more beneficial than to buy them.
+        \begin{figure}[H]
+            \centering
+            \scalebox{0.2}{\includegraphics{"".png}}
+            \caption{}
+            \label{fig:}
+        \end{figure}
 \section{Wheels}
     \subsection{Overview}
         Various factors affect the wheel design – rolling resistance is affected by the wheel and bearing materials, with the torque transferred dependent on the radii and material of the driven wheels.
@@ -226,7 +236,7 @@
         \resizebox{\columnwidth}{!}{%
             $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  r_f cos(\alpha)(\frac{F_{load}}{r_o – r_i})$%
         }
-    \end{equation*}
+        \end{equation*}
     $\\*Static
     \\*F_{res-rubber} \approx 10.98N	
     \\*F_{res-polyurethane} \approx 4.88N
@@ -235,8 +245,7 @@
     \\*F_{res-rubber} \approx 0.37N	
     \\*F_{res-polyurethane} \approx 1.95N
     \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N$
-    \\*\cite{Combined_Resistance}
-    
+    \\*\cite{Combined_Resistance} its gonna be a while before i can get there, so until then im just gonna quickly sort some bits
     
 \section{Control}
     \subsection{Overview}
@@ -295,7 +304,7 @@
     		Control of these circuits is by pulse width modulation or serial interface, varying by manufacturer, signals that can be generated simply with a microcontroller.
     		This circuit could be designed by hand, however due to complexity, and the competitive pricing of available products, it may prove a more effective choice to purchase an existing ESC.
     	%\subsection{Feedback}
-    		%text goes here
+    		%text goes here 
 \section{Conclusion}
 From our research, a number of design conclusions have been drawn: a belt-drive and brushless DC motor were selected due to their optimal efficiency, while rubber wheels were settled on for the driven axle due to their improved grip over polyurethane. Titanium bearings offer a compromise between performance and durability, with the final component layout providing the optimal trade-off between efficiency, ground clearance and rider comfort.
 
