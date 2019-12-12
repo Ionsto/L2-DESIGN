@@ -20,7 +20,7 @@
 \section{Executive Summary}
         This project concerns the design and construction of an electric skateboard based on a traditional longboard.
 \section{Introduction}
-        This project's scope consists of designing an electric skateboard capable of carrying a large male on a round trip from the Josephine Butler College area to the Science Site and back via South Road. The board's range should significantly exceed this base requirement in order to facilitate wider use. A longboard was supplied which will be modified to produce the final product. 
+        This project's scope consists of designing an electric skateboard capable of carrying a large male for daily transport. A longboard was supplied which will be modified to produce the final product. 
 \section{Board}
     \subsection{Overview}
         The board provided was a 'Mindless Raider I model (34’’ x 8’’)’\cite{boardModel}. The deck was modelled in SOLIDWORKS and assembled with a library model of the trucks \cite{trucksCAD} - this allowed a Finite Element Method (FEM) analysis to be performed. Material properties were taken for maple wood, as it is the main board material. Fig \ref{fig:Board_Rendering} shows a rendering of the final concept \cite{shoesCAD}. 
@@ -111,7 +111,7 @@
         \subsubsection{Chain}
             Using a chain drive is the most efficient way to transmit power amongst the options covered, with a typical efficiency of 98\%. \cite{Mechanical_Power_Transmission} However, high maintenance is required due to the need for lubrication to prevent wear and corrosion. 
         \subsubsection{Belt}
-            Due to the elasticity of toothed rubber belts, this option provides low noise and vibration, and allows for efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan making this preferable.
+            Due to the elasticity of toothed rubber belts, this option provides low noise and vibration, and efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan making this preferable.
         \begin{figure}[H]
             \centering
             \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain2Lab".png}}
@@ -150,9 +150,9 @@
         \subsubsection{DC Brushless Motor}
             With an electronic speed controller a motor can be run from a DC supply with speed control and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque, enabling the board to accelerate quickly at low speeds \cite{AC_Motor}. For these reasons it was decided a DC brushless motor would be used.
     \section{Battery}
-    We need a small, light and quickly rechargeable battery that can power the whole system. We picked a voltage of 24V as voltage for the total supply rail as it is common for consumer electronics and doesn't require high voltage safety precautions. Battery charge capacity (amp-hours) and energy capacity are used roughly interchangeably due to the constant supply voltage for ease of calculation but will be annotated with the units strictly.
+    A compact and quickly rechargeable battery is required. A supply rail of 24V is common for consumer electronics and will not require high voltage safety precautions. Battery charge capacity (amp-hours) and energy capacity are used roughly interchangeably due to the constant supply voltage for ease of calculation but will be annotated with the units strictly.
         \subsubsection{Capacity}
-            The greater the capacity of a battery network, the heavier and more expensive it becomes.Two main considerations regarding required capacity are; range and lifespan. Range will be determined by average daily usage (a 1.5 km round trip between Butler and Science sites, shown in Fig. \ref{fig:route}) and expected charge frequency (assumed to be once a week).
+            The larger a battery network's capacity, the heavier and more expensive it becomes.Two main considerations regarding required capacity are range and lifespan. Range is be determined by average daily usage (a 1.5 km round trip between Butler and Science sites, (Fig. \ref{fig:route}) and expected charge frequency (assumed once a week).
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/RouteAnalysis/Route.png}}
@@ -184,17 +184,15 @@
         %\subsubsection{Charging}
             %Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat associated with large energy transfers.
         \subsubsection{Lifespan}
-            The Lifespan of a battery is determined by the depth of discharge and the family of battery used. It can be seen in Fig. \ref{fig:DoD} how lithium polymer batteries have a longer lifespan at similar discharge depths. 
-            %SAM-------> Could this line be condensed to:
-            %Fig.(ref) illustrates the superior lifespan at comparable discharge depths
-            Figure made from data from Table 2 of "How to Prolong Lithium-based Batteries" \cite{BatteryLifespan} 
+            \ref{fig:DoD} illustrates the superior lifespan at comparable discharge depths.
+            \cite{BatteryLifespan} 
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/ChargeCycles/DoD.png}}
-                \caption{Lifespan vs depth of discharge}
+                \caption{Lifespan vs DoD (Depth of Discharge)}
                 \label{fig:DoD}
             \end{figure}
-            Lithium-ion batteries have a life cycle of approx. 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approx. 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD for a full use.
+            Lithium-ion batteries have a life cycle of approximately 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approximately 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD for a full use.
         \subsubsection{Rate of Charge}
             Lithium polymer batteries are charged at a constant rate until they reach near capacity at which they slow down and shut off. Recharge time has to have a lower bound percentage. General guidelines suggest that the charge rate should not exceed 1C [Pushing the total amp hours in one hour] to ensure optimal battery life. Ideally, the battery will charge from 50\% empty to full overnight. This will be achievable at a sub 1C rate [15 amps], which allows it to recharge from consumer wall sockets.
         \subsubsection{Battery Size}
@@ -208,37 +206,37 @@
             \end{figure}
 \section{Trucks}
     \subsection{Operating Terrain}
-        The board will be operating in an urban environment and will be running over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still be present. A suspension system is thus required to minimise these effects.
-    \subsection{Speed Wobble}
-        This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
+        The board will be operating over mostly smooth surfaces - however, disturbances such as uneven patches of road, litter and debris will still be present. At high speeds, low frequency oscillations (4-10Hz, called 'speed wobble') build and begin to impede rider control. A suspension system is thus required to minimise these effects.
+    %\subsection{Speed Wobble}
+        %This phenomenon consists of unpredictable vibrations (approx. 4-10Hz) induced in the board when running at high speed – if neglected, these oscillations could directly affect the user’s ability to control the board, reducing rider comfort and potentially resulting in injury. 
     \subsection{Potential Solutions}
-        One option is to buy existing truck suspension systems- these would have the benefits of being pre-tested for similar operating requirements, freeing up development time. It may however be difficult to obtain suspension systems of the correct dimensions off-the-shelf, since very few are currently available on the market. Alternatively, analysis of the requirements could lead to a bespoke solution, which would be more advantageous than an off the shelf solution.
-        There are many patented designs in existence, as shown in figures \ref{fig: Spring Idea}, \ref{fig: Seperate Spring Idea} and \ref{fig: Hanger Idea}. These are not without their drawbacks though, so designing and manufacturing our own in a similar style to figure 18 is the ideal solution, providing a detailed cost analysis proves it more beneficial than to buy them.
+        Buying existing truck suspension systems would free up development time, however due to availability constraints, a bespoke design may be necessary.
+        Several patented designs exist, as shown in figures \ref{fig: Spring Idea}, \ref{fig: Seperate Spring Idea} and \ref{fig: Hanger Idea}. Fig.\ref{fig: Spring Idea} shows an ideal solution, with the decision to purchase or manufacture being dependent on labour and budget constraints.
         \begin{figure}[H]
             \centering
             \scalebox{0.2}{\includegraphics{"./Wheels/Spring Idea".png}}
-            \caption{}
+            \caption{Credits: Seismic Skate}
             \label{fig: Spring Idea}
         \end{figure}
         \begin{figure}[H]
             \centering
             \scalebox{0.2}{\includegraphics{"./Wheels/Seperate Spring Idea".png}}
-            \caption{}
+            \caption{Credit: US Patent 4,176,850 'SKATEBOARD TRUCK WITH INDEPENDENT WHEEL SUSPENSION'}
             \label{fig: Seperate Spring Idea}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \scalebox{0.2}{\includegraphics{"./Wheels/Hanger Idea".png}}
-            \caption{}
+            \scalebox{0.35}{\includegraphics{"./Wheels/Hanger Idea".png}}
+            \caption{Credit: Avenue Trucks}
             \label{fig: Hanger Idea}
         \end{figure}
 \section{Wheels}
     \subsection{Overview}
-        Various factors affect the wheel design – rolling resistance is affected by the wheel and bearing materials, with the torque transferred dependent on the radii and material of the driven wheels.
+        Various factors affect the wheel design – rolling resistance is affected by the wheel and bearing materials, with torque transferred dependent on the radii and material of the driven wheels.
     \subsection{Wheel Materials}
-        Longboard wheels are typically made from polyurethane, which achieve a $\mu$-rolling in the range 0.04-0.08 \cite{wheel_data}. While this is sufficiently small to provide low rolling resistance (see calculations below), polyurethane only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road surface. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
+        Longboard wheels are typically made from polyurethane, which achieve a $\mu_{rolling}$ in the range 0.04-0.08 \cite{wheel_data}. While this is sufficiently small to provide low rolling resistance (see calculations below), polyurethane only provides a $\mu$-static of ~0.2, limiting the torque that can be transferred to the road. This can be improved by using rubber for the driven wheels as rubber achieves a $\mu$-static in the range of 0.35-0.45, providing an increase in torque transmitted of 75-125\%.
     \subsection{Bearing Materials}
-        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 $kg/mm^{2}$ \cite{ceramic_data1}, approximately 640\% greater than AISI-52100 steel \cite{steel_data} and ASTM-7 Titanium \cite{titanium_data}, leading to reduced energy loss from elastic deformation.  However, Silicon Nitride exhibits a yield strength of 170MPa \cite{ceramic_data2}: approx. 64\% less than steel and titanium. Ceramic may thus be inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. As steel and titanium perform similarly, the latter’s corrosion resistance suggests that it is the optimal type as less maintenance will be required. 
+        Longboard bearings come in three different material families: steel, titanium and ceramic. Ceramic (Silicon Nitride) has a Brinell hardness 1479 $kg/mm^{2}$ \cite{ceramic_data1}, approximately 640\% greater than AISI-52100 steel \cite{steel_data} and ASTM-7 Titanium \cite{titanium_data}, leading to reduced energy loss from elastic deformation.  However, Silicon Nitride exhibits a yield strength of 170MPa \cite{ceramic_data2}: approximately 64\% less than steel and titanium. Ceramic is thus inadvisable as the board will be used in an environment where it is expected to suffer shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the former often in the \$90-\$150 range, as opposed to \$15-\$20 and \$30 for steel and titanium respectively. As steel and titanium perform similarly, the latter’s corrosion resistance suggests that it is the optimal type as less maintenance will be required. 
     \subsection{Wheel Dimensions}
         Longboard wheels vary in diameter between 60-100mm with a contact-patch width of approx. 30mm. Larger wheel radii provide greater top speed and smoother ride, with smaller radii producing greater mechanical advantage. 
         Wheel diameter is selected to provide the desired torque when driven by the chosen motor.
@@ -257,7 +255,7 @@
     \\*F_{res-rubber} \approx 0.37N	
     \\*F_{res-polyurethane} \approx 1.95N
     \\*F_{res-total-dynamic} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 4.64N$
-    \\*\cite{Combined_Resistance} its gonna be a while before i can get there, so until then im just gonna quickly sort some bits
+    \\*\cite{Combined_Resistance} 
     
 \section{Control}
     \subsection{Overview}
@@ -312,7 +310,7 @@
     		%If regenerative braking is pursued, the circuitry must be carefully controlled so that the charging current is not exceeding these values.
     \subsection{Motor Control}
     		Since a DC Brushless motor is being used, more complex control methods are required compared to DC brushed motors.
-    		This circuitry is available off the shelf, called 'Electronic Speed Controllers' and are widely available in a range of specifications.
+    		This circuitry is available off the shelf, called 'Electronic Speed Controllers' and are available in a range of specifications.
     		Control of these circuits is by pulse width modulation or serial interface, varying by manufacturer, signals that can be generated simply with a microcontroller.
     		This circuit could be designed by hand, however due to complexity, and the competitive pricing of available products, it may prove a more effective choice to purchase an existing ESC.
     	%\subsection{Feedback}
