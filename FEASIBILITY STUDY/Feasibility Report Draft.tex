@@ -132,7 +132,7 @@
         	\item Size- The motor must fit under the board and be relatively lightweight
         	\item Torque- 13Nm at the wheel 
         	\item Speed- The $K_{v}$ motor parameter should be 250
-        	\item Power- 2000w assuming no acceleration and 8$ms^{-1}$
+        	\item Power- 2000w assuming no acceleration uphill and 8$ms^{-1}$
         \end{itemize}
         \begin{gather*}
             F = F_{Rolling Resistance} + F_{Acceleration} + F_{Gravity}\\
@@ -144,15 +144,15 @@
             Motor Power = \frac{F_{Total} \times Velocity (ms^{-1})}{Efficiency}
         \end{gather*}
         \subsubsection{AC Motor}
-            The AC induction motor has excelent efficiency, reliability and durability. However, using a DC battery source would require a variable frequency inverter to produce an AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue when going up hills. 
+            The AC induction motor has excellent efficiency, reliability and durability. However, using a DC battery source would require a variable frequency inverter to produce an AC speed control, and particularly with single phase induction motors the staring toque is very low, an issue when going up hills. 
         \subsubsection{DC Brushed Motor}
             Using a commutator allows a motor to be run from a DC supply but using carbon brushes adds a large amount of friction and varying the speed of this type of motor is harder, especially if two motors were implemented and run synchronously.
         \subsubsection{DC Brushless Motor}
             With an electronic speed controller a motor can be run from a DC supply with speed control and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque, enabling the board to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
     \section{Battery}
-    We need a small, light and quickly rechargeable battery that can power the whole system. We picked a voltage of 24V as voltage for the total supply rail as it is common for consumer electronics and doesn't require high voltage safety precautions. The battery charge capacity (amp-hours) and energy capacity are used roughly interchangeably due to the constant supply voltage for ease of calculation but will be annotated with the units strictly.
+    We need a small, light and quickly rechargeable battery that can power the whole system. We picked a voltage of 24V as voltage for the total supply rail as it is common for consumer electronics and doesn't require high voltage safety precautions. Battery charge capacity (amp-hours) and energy capacity are used roughly interchangeably due to the constant supply voltage for ease of calculation but will be annotated with the units strictly.
         \subsubsection{Capacity}
-            The greater the capacity of a battery network, the heavier and more expensive it becomes.The two main considerations regarding the required capacity are range and lifespan. The range will be determined by average daily usage (a 1.5 km round trip between Butler and Science sites, shown in Fig. \ref{fig:route}) and expected charge frequency (assumed to be once a week).
+            The greater the capacity of a battery network, the heavier and more expensive it becomes.Two main considerations regarding required capacity are; range and lifespan. Range will be determined by average daily usage (a 1.5 km round trip between Butler and Science sites, shown in Fig. \ref{fig:route}) and expected charge frequency (assumed to be once a week).
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/RouteAnalysis/Route.png}}
@@ -175,7 +175,7 @@
                 \caption{Gradient of Route}
                 \label{fig:gradient}
             \end{figure}
-            The total elevation change consists of 50m uphill and 25m down (heading towards Josephine Butler). The energy required can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly flat route.
+            The total elevation change consists of 50m uphill and 25m down (heading south). Energy requirements can be modelled as a simple vehicle hoist to give an estimate (Energy = $mg\Delta h$). Total vertical ascent over the trip is 75m, so we estimate that approximately 90kJ (25Wh) more energy will be required than with a perfectly flat route.
         \subsubsection{Energy Requirement Estimates}
             10Wh/mile (based off electric bike: 12Wh/mile)
             Total Energy of Journey (including vertical): 37Wh
@@ -184,7 +184,7 @@
         %\subsubsection{Charging}
             %Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat associated with large energy transfers.
         \subsubsection{Lifespan}
-            The Lifespan of a battery is determined by the depth of discharge and the family of battery used. It can be seen in Fig. \ref{fig:DoD} how lithium polymer batteries have a longer lifespan at similar discharge depths. Data from 
+            The Lifespan of a battery is determined by the depth of discharge and the family of battery used. It can be seen in Fig. \ref{fig:DoD} how lithium polymer batteries have a longer lifespan at similar discharge depths. Figure made from data from Table 2 of "How to Prolong Lithium-based Batteries" \cite{BatteryLifespan} 
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/ChargeCycles/DoD.png}}
@@ -266,7 +266,7 @@
     		A potential solution to this is a dual pressure pad control system, pictured in Fig.\ref{fig:Pressure Pads} \cite{PressurePads}.
             
     	\subsubsection{Status Meters}
-    		The user needs to be able to understand the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig.\ref{fig:7 seg} \cite{7seg} and Fig.\ref{fig:LCD} \cite{LCD}).
+    		The rider must know the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status information. This can be improved by using 7 segment displays or a small LCD, allowing for quantitative data to be shown to the rider. (shown in Fig.\ref{fig:7 seg} \cite{7seg} and Fig.\ref{fig:LCD} \cite{LCD}).
     		
     	\begin{figure}[H]
             \centering
