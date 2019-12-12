@@ -169,7 +169,7 @@
             Using a commutator allows a motor to be run from a DC supply but using carbon brushes adds a large amount of friction and varying the speed of this type of motor is harder, especially if two motors were implemented and run synchronously.
         \subsubsection{DC Brushless Motor}
             With an electronic speed controller a motor can be run from a DC supply with speed control and without a commutator meaning less friction so greater efficiency, longer lifespan and reduced weight for the same output power. This motor family also gives a large staring torque, enabling the board to accelerate quickly at low speeds XXX. For these reasons it was decided a DC brushless motor would be used.
-    \subsection{Battery}
+    \section{Battery}
         \subsubsection{Capacity}
             The greater the capacity of a battery network, the heavier and more expensive it becomes.The two main considerations regarding the required capacity are range and lifespan. The range will be determined by average daily usage (a 1.5 km round trip between Butler and Science sites, shown in Fig. \ref{fig:route}) and expected charge frequency (assumed to be once a week).
             \begin{figure}[H]
@@ -195,9 +195,9 @@
                 \label{fig:gradient}
             \end{figure}
             The total elevation change consists of 50m uphill and 25m down (heading towards Josephine Butler). The energy required can be modelled as a simple vehicle hoist to give a rough estimate (Energy = $mg\Delta h$). The total vertical ascent over the trip is 75m, so we estimate that roughly 90kJ (25Wh) more energy will be required than with a perfectly flat route.
-        \subsubsection{Power Requirement Estimates}
+        \subsubsection{Energy Requirement Estimates}
             10Wh/mile (based off electric bike: 12Wh/mile)
-            Total Power of Journey (including vertical): 37Wh
+            Total Energy of Journey (including vertical): 37Wh
             Per Week Consumption: 5 x 37.5Wh = 185Wh
             -Absolute Minimum Required Capacity of 185Wh
         %\subsubsection{Charging}
@@ -284,7 +284,7 @@
     		A potential solution to this is a dual pressure pad system, pictured in Fig \ref{fig:Pressure Pads} \cite{Pressure Pads}.
             
     	\subsubsection{Status Meters}
-    		The user needs to be able to understand the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} \cite{7 seg} and Fig.\ref{fig:LCD}).
+    		The user needs to be able to understand the remaining range/time of the board. The current market leader uses an array of LEDs on its controller for status. This can easily be improved on using 7 segment displays or a small LCD, allowing for numerical data to be shown to the rider. (shown in Fig. \ref{fig:7 seg} \cite{7 seg} and Fig.\ref{fig:LCD} \cite{LCD}).
     		
     	\begin{figure}[H]
             \centering
@@ -310,7 +310,7 @@
     \subsection{Motor Control}
     		Since a DC Brushless motor is being used, a more complex control method is required than a brushed DC motor.
     		This circuitry can be obtained off the shelf as an 'Electronic Speed Controller' and is widely available in a range of specifications due to its use in the remote control models.
-    		Control of these circuits is by pulse width modulation, or serial interface, varying by model and age of controller, signals that can be generated simply with a microcontroller.
+    		Control of these circuits is by pulse width modulation, or serial interface, varying by manufacturer, signals that can be generated simply with a microcontroller.
     		This circuit could be designed and produced by hand, however due to the complexity, and the competitive pricing of the currently available products, it may prove a more effective choice to purchase an existing ESC.
     	%\subsection{Feedback}
     		%text goes here
