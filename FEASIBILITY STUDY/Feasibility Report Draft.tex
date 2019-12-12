@@ -70,30 +70,30 @@
                 \label{Fig:ConceptE}
             \end{figure}
     \subsection{Structural Analysis}
-        Rider load was assumed to total 1100N, applied over two 10cmx10cm areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown in the figures below.
+        %Rider load was assumed to total 1100N, applied over two 10cmx10cm areas at appropriate positions on the board. An additional load of 80N was applied at the centre of the wheelbase to model the weight of the electrical components.The simulation computed the maximum Von-Mises stress to be approximately 31.69MPa, located at the joint between the truck and the board, as shown in the figures below.
         \begin{figure}[H]
             \centering
-            \scalebox{0.3}{\includegraphics{"./Board/Stress_Analysis_Top".png}}
+            \scalebox{0.35}{\includegraphics{"./Board/Stress_Analysis_Top".png}}
             \caption{FEM Von Mises Stress Analysis of Top Surface of the Board
             }
             \label{fig:stressTop}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \scalebox{0.3}{\includegraphics{"./Board/Stress_Analysis_Bottom".png}}
+            \scalebox{0.35}{\includegraphics{"./Board/Stress_Analysis_Bottom".png}}
             \caption{FEM Von Mises Stress Analysis of Bottom Surface of the Board
             }
             \label{fig:stressBottom}
         \end{figure}
-        Comparing this to the yield strength of maple wood, approximately 65.5MPa \cite{materialProperties}, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. Maximum displacement was calculated as approximately 18.19mm (shown below). 
+        %Comparing this to the yield strength of maple wood, approximately 65.5MPa \cite{materialProperties}, a Factor of Safety value of approximately 2.1 was calculated. A further simulation was performed with the rider's load scaled up by this FOS, and the load located at a single 10cmx10cm area at the centre of the wheelbase. Maximum displacement was calculated as approximately 18.19mm (shown below). 
         \begin{figure}[H]
                 \centering
-                \scalebox{0.3}{\includegraphics{"./Board/Displacement".png}}
+                \scalebox{0.4}{\includegraphics{"./Board/Displacement".png}}
                 \caption{Displacement Contour of Board When Put Under Maximum Loading
                 }
                 \label{fig:Displacement}
             \end{figure}
-        With the unloaded board height of 110mm, this allows a minimum ground clearance of approximately 91.8mm - this was considered acceptable as the electrical components will have a max height of 45.9mm considering a FOS of 2.
+        %With the unloaded board height of 110mm, this allows a minimum ground clearance of approximately 91.8mm - this was considered acceptable as the electrical components will have a max height of 45.9mm considering a FOS of 2.
     
 \section{Powertrain}
     \subsection{Transmission}
@@ -101,7 +101,7 @@
             Gears provide a vast array of gear ratios but the large range of output speeds of motors makes large gear ratios unnecessary.
         \begin{figure}[H]
             \centering
-            \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain1Lab".png}}
+            \scalebox{0.125}{\includegraphics{"./Drivetrain/Images/Drivetrain1Lab".png}}
             \caption{Arrangement with gears}
             \label{fig:DrivetrainChain}
         \end{figure}
@@ -114,13 +114,13 @@
             Due to the elasticity of toothed rubber belts, this option provides low noise and vibration, and efficient power transmission. Furthermore, they require relatively low maintenance and have a long lifespan making this preferable.
         \begin{figure}[H]
             \centering
-            \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain2Lab".png}}
+            \scalebox{0.14}{\includegraphics{"./Drivetrain/Images/Drivetrain2Lab".png}}
             \caption{Arrangement with Belt or Chain}
             \label{fig:Drivetrain2}
         \end{figure}
         \begin{figure}[H]
             \centering
-            \scalebox{0.12}{\includegraphics{"./Drivetrain/Images/Drivetrain3Lab".png}}
+            \scalebox{0.13}{\includegraphics{"./Drivetrain/Images/Drivetrain3Lab".png}}
             \caption{Arrangement with Belt attached to trucks}
             \label{fig:Drivetrain3}
         \end{figure}
@@ -160,7 +160,7 @@
                 \label{fig:route}
             \end{figure}
             Extra energy considerations will be needed for the range as there is a relatively large height change throughout the route.
-            The elevation and gradient variations can be seen in the graphs below, with data sourced from various GPS public databases via an online website \cite{GPSDatabase}.
+            Elevation and gradient variations can be seen in the graphs below, with data sourced from various GPS public databases via an online website \cite{GPSDatabase}.
             Fig \ref{fig:elevation} shows the elevation of the route and makes a difference for the maximum capacity needed.
             Fig \ref{fig:gradient} shows the gradient of this route, which will effect the maximum torque required.
             \begin{figure}[H]
@@ -175,7 +175,7 @@
                 \caption{Gradient of Route}
                 \label{fig:gradient}
             \end{figure}
-            The total elevation change consists of 50m uphill and 25m down (heading south). Energy requirements can be modelled as a simple vehicle hoist to give an estimate (Energy = $mg\Delta h$). Total vertical ascent over the trip is 75m, so we estimate that approximately 90kJ (25Wh) more energy will be required than with a perfectly flat route.
+            Total elevation change consists of 50m uphill and 25m down (heading south). Energy requirements are modelled as a simple vehicle hoist to give an estimate (Energy = $mg\Delta h$). Total vertical ascent over the trip is 75m, so approximately 90kJ (25Wh) more energy will be required than with a flat route.
         \subsubsection{Energy Requirement Estimates}
             10Wh/mile (based off electric bike: 12Wh/mile)
             Total Energy of Journey (including vertical): 37Wh
@@ -184,14 +184,14 @@
         %\subsubsection{Charging}
             %Charging the battery is a complex concern, as specific charging circuits are required to prevent damage to the system. This is particularly true of modern batteries due to the large release of heat associated with large energy transfers.
         \subsubsection{Lifespan}
-            \ref{fig:DoD} illustrates the superior lifespan at comparable discharge depths.
-            \cite{BatteryLifespan} 
             \begin{figure}[H]
                 \centering
                 \scalebox{0.5}{\includegraphics{./Battery/ChargeCycles/DoD.png}}
                 \caption{Lifespan vs DoD (Depth of Discharge)}
                 \label{fig:DoD}
             \end{figure}
+            \cite{BatteryLifespan} 
+            \ref{fig:DoD} illustrates the superior lifespan at comparable discharge depths.
             Lithium-ion batteries have a life cycle of approximately 800 cycles at 50\% DoD, whereas Lithium Polymer cells perform better at approximately 2000 charges at the same DoD - we will be using LiPo for this reason. Given that the capacity required at 100\% DoD is 185Wh, a 370Wh capacity is needed to achieve 50\% DoD for a full use.
         \subsubsection{Rate of Charge}
             Lithium polymer batteries are charged at a constant rate until they reach near capacity at which they slow down and shut off. Recharge time has to have a lower bound percentage. General guidelines suggest that the charge rate should not exceed 1C [Pushing the total amp hours in one hour] to ensure optimal battery life. Ideally, the battery will charge from 50\% empty to full overnight. This will be achievable at a sub 1C rate [15 amps], which allows it to recharge from consumer wall sockets.
@@ -201,7 +201,7 @@
             \begin{figure}[H]
                 \centering
                 \scalebox{0.40}{\includegraphics{./Battery/Density.png}}
-                \caption{Credits: NASA - National Aeronautics and Space Administration \cite{BatteryDensity}}
+                \caption{Ragone Plot \cite{BatteryDensity}}
                 \label{fig:Battery Size}
             \end{figure}
 \section{Trucks}
@@ -247,7 +247,7 @@
             $F_{resistive} = (\mu _{static}  -  r_i sin(\alpha) \cos(\arcsin(\frac{r_f}{r_i}))  +  r_f cos(\alpha)(\frac{F_{load}}{r_o – r_i})$%
         }
         \end{equation*}
-    $\\*Static
+    $Static
     \\*F_{res-rubber} \approx 10.98N	
     \\*F_{res-polyurethane} \approx 4.88N
     \\*F_{res-total-static} = 2 F_{res-rubber} + 2 F_{res-polyurethane} = 31.72N 
