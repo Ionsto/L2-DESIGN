@@ -1,0 +1,90 @@
+Wheels Section
+Many factors affect the choice of wheels – rolling resistance is affected by the materials of the
+wheels and bearings, with the ability to transfer power dependent on the radii and material of the
+driven wheels.
+Commercial longboard wheels are typically made from polyurethane, with construction normally
+consisting of a hardened plastic core with the outer layers and surface of polyurethane. This material
+achieves a μrolling in the range of 0.04-0.08 – while this is sufficiently small to provide low rolling
+resistance, polyurethane also only provides a μstatic of ~0.2, limiting the amount of torque than can
+be transferred from the motor to road surface. This can be ameliorated by using rubber for the
+driven wheels as rubber achieves a μstatic in the range of 0.35-0.45, allowing for an increase in torque
+transmitted of 75-125%.
+Bearing materials for longboard wheels come in three different material families: steel, titanium and
+ceramic. Whilst exact values of frictional resistance are difficult to find, comparisons can be
+extrapolated from their material properties. Ceramic (Silicon Nitride) has a Brinell hardness 1479
+kg/mm2, an increase of approx. 640% over that of AISI 52100 steel and ASTM 7 Titanium 1. This would
+suggest much less energy lost from elastic deformation. However, Silicon Nitride also exhibits a yield
+strength of 170MPa: approx. 64% less than steel and titanium. As such ceramic may be unadvisable
+as the board will be used in an environment not dedicated to skateboarding and is likely to suffer
+various shocks. Additionally, ceramic bearings cost significantly more than steel and titanium, the
+former often in the $90-$150 range, as opposed to $15-$20 and $30 mark for steel and titanium
+respectively. Due to the similar properties of steel and titanium bearings, the latter’s corrosion
+resistance may suggest that it is the optimal of the three, increasing savings in the long-run by
+requiring less maintenance.
+Longboard wheels typically vary in diameter between 60-100mm with a contact patch width of
+≈30mm – the size of wheel can be selected to provide the required torque at ground, with the
+relevant calculations shown below.
+Tables and Calculations
+Material
+
+μ-static
+
+μ-dynamic
+
+Polyurethane
+Rubber
+
+~ 0.2
+0.35-0.45
+
+0.04-0.08
+0.01-0.015
+
+Tg = Torque at Ground
+
+Tw = Torque at Wheel
+
+r = wheel radius
+
+𝑇 =
+
+1
+
+These specific materials are the three most commonly used in the bearings of each material type.
+
+Resistances at Wheels
+Total mass ≈ 150kg
+Mass per wheel = 37.5kg
+FRES = Resistive force from Wheels
+Fload = 37.5kg x 9.81 = 367.9N (per wheel)
+μstatic-rubber = 0.015
+
+μstatic-polyurethane = 0.08
+
+μbearing = 0.0015 (assumed upper bound)
+μrolling-rubber = 0.45
+ri = 11mm
+
+μrolling-polyurethae = 0.2
+
+ro = 35mm
+
+FRES = (μstatic – risin(α)cos(arcsin(rf/ri)) + rfcos(α)) x (Fload/(ro – ri))
+α = arctan(Fp/Fload)
+(rf/ri) = μbearing
+arcsin(rf/ri) = 0.0859° → cos(arcsin(rf/ri) ≈ 1
+
+Static (Skateboard Stationary, Wheels not Moving):
+FRES-rubber ≈ 4.9037
+
+FRES-polyurethane ≈ 2.2757
+
+FRES-Total-Static = 2 FRES-rubber + 2 FRES-polyurethane = 14.36N
+Dynamic
+FRES-rubber ≈ 0.33111
+
+FRES-polyurethane ≈ 1.0144
+
+FRES-Total-Dynamic = 2 FRES-rubber + 2 FRES-polyurethane = 2.691N
+
+
