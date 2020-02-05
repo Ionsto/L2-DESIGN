@@ -1,18 +1,19 @@
 import numpy as np
+import math
 #KG
-Mass = 120
+Mass = 140
 #N/kg
-Gravity = 9.8
+Gravity = 9.81
 #From a paper
 RollingResistance = 0.01
 #In percentage
-MaxGradient = 10.0
+MaxGradient = 10.0/6.28
 #From route analysis
 GradientAngle = np.arctan(MaxGradient / 100.0)
 #Reasonable value
-WheelRadius = 100e-3/2
+WheelRadius = (70e-3)/2
 #Calcuations
 MinTorque = RollingResistance * Gravity * Mass * WheelRadius
-MaxTorque = MinTorque + (Mass * Gravity * np.sin(WheelRadius))
+MaxTorque = MinTorque + (Mass * Gravity * math.sin(MaxGradient) * WheelRadius)
 print("Min torque",MinTorque)
 print("Max torque",MaxTorque)
