@@ -3,20 +3,10 @@
 ## Battery picked
 Two 6S batteries are more affordable to find, and allow for the batteries to be placed in disparate locations
 There is also the thermal dissapation benifits for having two seperate batteries.
-We picked this battery as it has roughly half the voltage we needed, and was small enought that it could fit in the encolsure.
-
+We picked this battery as it has roughly half the capacity that we need
 https://www.banggood.com/ZOP-POWER-22_2V-8000mAh-60C-6S-Lipo-Battery-With-XT60-Plug-For-RC-Model-p-1328629.html
-
-Stats:
-
-- Watt hour capacity: 177.6Wh each
-- Cell count: 6S
-- Voltage: 22.2V
-- Size 90x46x158mm
-
+Watt hour capcity: 177.6Wh each
 2 batteries in parallel, 355.2Wh
-
-The batteries will be in series, so the capacity will be 178Wh together, but the operating voltage will be will be 44.4V.
 
 
 
@@ -27,10 +17,3 @@ https://www.flitetest.com/articles/Parallel_Charging_Your_LiPo_Batteries
 
 ## Battery charging mode 
 When in operation, the  batteries are in series to get the correct operating voltage, but for charging they need to be in parralel for the charger to work.
-
-# Battery states
-Battery system state
-- Hibernation (battery isolated)
-- Idle state (battery live, V^+_S,V^-_S, V^+_P, V^-_P all off)
-- Charge state (V^+_P, V^-_P on, V^+_S,V^-_S off)
-- Drive state (V^+_P, V^-_P off, V^+_S,V^-_S on)
