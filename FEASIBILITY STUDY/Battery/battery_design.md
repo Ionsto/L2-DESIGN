@@ -28,9 +28,31 @@ https://www.flitetest.com/articles/Parallel_Charging_Your_LiPo_Batteries
 ## Battery charging mode 
 When in operation, the  batteries are in series to get the correct operating voltage, but for charging they need to be in parralel for the charger to work.
 
-# Battery states
+## Battery microcontroller
+Low power, separate coin battery supply, min lifespan 5 years
+
+Power supply CR2032 - 225 mAh, 3V nominal
+
+LED indicator:
+
+- Off - hibernating
+- On - functioning
+- Blinking - dead
+
+Battery status monitor:
+
+- 2 ADC, voltage
+- 1 Ammeter, current
+
+Battery capacity line, report both battery voltages to arduino
+Battery draw line, report current usage
+
+
+## Battery states
 Battery system state
-- Hibernation (battery isolated)
-- Idle state (battery live, V^+_S,V^-_S, V^+_P, V^-_P all off)
-- Charge state (V^+_P, V^-_P on, V^+_S,V^-_S off)
-- Drive state (V^+_P, V^-_P off, V^+_S,V^-_S on)
+
+- Hibernation (battery isolated,LED indicator)
+- Idle state (battery live, V+S,V-S, V+P, V-P all off)
+- Charge state (V+P, V-P on, V+S,V-S off)
+- Drive state (V+P, V-P off, V+S,V-S on)
+- Battery disabled state (All off, LED indicator) - wake Arduino state reason?
