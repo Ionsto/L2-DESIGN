@@ -16,3 +16,10 @@ https://www.flitetest.com/articles/Parallel_Charging_Your_LiPo_Batteries
 
 #Battery charging mode 
 When in operation, the  batteries are in series to get the correct operating voltage, but for charging they need to be in parralel for the charger to work.
+
+# Battery states
+Battery system state
+- Hibernation (battery isolated)
+- Idle state (battery live, V^+_S,V^-_S, V^+_P, V^-_P all off)
+- Charge state (V^+_P, V^-_P on, V^+_S,V^-_S off)
+- Drive state (V^+_P, V^-_P off, V^+_S,V^-_S on)
