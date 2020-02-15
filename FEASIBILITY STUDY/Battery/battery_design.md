@@ -12,7 +12,8 @@ Stats:
 - Watt hour capacity: 177.6Wh each
 - Cell count: 6S
 - Voltage: 22.2V
-- Size 90x46x158mm
+- Size: 90x46x158mm
+- Mass: 1.24Kg
 
 2 batteries in parallel, 355.2Wh
 
