@@ -1,4 +1,5 @@
 # Battery section outline
+First section is headings and sub topics
 ## Headings
 - Introduction
 - Capacity
@@ -31,3 +32,15 @@
 - WEEE
 - Take back scheme
 - Maintanance and takeback
+
+# Nomenclture:
+- S rating for batteries - how many cells in series
+- Gravometric density, Wh per kg
+- Volumetric density, Wh per litre 
+
+
+
+# Direction
+## Actual configuration
+- Battery pack is made of two smaller 6S batteries
+-
