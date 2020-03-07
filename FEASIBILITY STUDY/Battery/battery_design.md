@@ -25,8 +25,10 @@ The batteries will be in series, so the capacity will be 178Wh together, but the
 https://electronics.stackexchange.com/questions/115795/charging-batteries-in-parallel-when-they-are-connected-in-series-in-the-circuit
 Since we have two seeprate batteries that are being used in parralel, we will either need a charger that can handle a 12S system or we will have to do some TDMA parralel charging.
 https://www.flitetest.com/articles/Parallel_Charging_Your_LiPo_Batteries
-Charger:
-https://uk.banggood.com/SKYRC-e680-80W-8A-ACDC-Balance-Charger-Discharger-for-1-6S-Lipo-Battery-p-1526977.html?gmcCountry=GB&currency=GBP&createTmp=1&utm_source=googleshopping&utm_medium=cpc_bgcs&utm_content=lijing&utm_campaign=ssc-gbg-all-0218&ad_id=332556156911&gclid=Cj0KCQiAkKnyBRDwARIsALtxe7jVKPeWvrknm1ky1uDgQWFhhLgEnDdWBOXv_zR9uhSxIB9SeKE4DUEaAoWnEALw_wcB&ID=47184&cur_warehouse=CN
+Charger: CHANGED
+https://www.banggood.com/ToolkitRC-URUAV-M800-300W-15A-DC-Smart-1-8S-Lipo-Battery-Balance-Charger-Discharger-With-Voltage-Servo-Checker-Receiver-Signal-Tester-Quick-Charger-Function-p-1588415.html?rmmds=search&ID=6280172&cur_warehouse=CN
+This charger has a higher current rating - to drop charge times (did some more maths).
+OLD charger: https://uk.banggood.com/SKYRC-e680-80W-8A-ACDC-Balance-Charger-Discharger-for-1-6S-Lipo-Battery-p-1526977.html?gmcCountry=GB&currency=GBP&createTmp=1&utm_source=googleshopping&utm_medium=cpc_bgcs&utm_content=lijing&utm_campaign=ssc-gbg-all-0218&ad_id=332556156911&gclid=Cj0KCQiAkKnyBRDwARIsALtxe7jVKPeWvrknm1ky1uDgQWFhhLgEnDdWBOXv_zR9uhSxIB9SeKE4DUEaAoWnEALw_wcB&ID=47184&cur_warehouse=CN
 
 ## Battery charging mode 
 When in operation, the  batteries are in series to get the correct operating voltage, but for charging they need to be in parralel for the charger to work.
